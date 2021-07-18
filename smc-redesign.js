@@ -6,6 +6,7 @@
         targetNode.insertAdjacentHTML('afterend', '<p class="custom-basket-count">Choose 4 recipes</p>');
 
         var configObject = {
+            childList:true,
             characterData: true,
             subtree: true
         };
