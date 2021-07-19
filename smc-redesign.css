@@ -170,7 +170,7 @@ header{
   line-height: 24px;
 }
 .container-fluid div:nth-of-type(3) button {
-  display: none;
+  /* display: none; */
 }
 .MuiDrawer-paper div:nth-of-type(2) ul>li:nth-of-type(2n) {
   display: none;
