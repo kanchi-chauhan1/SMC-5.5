@@ -158,13 +158,13 @@ header{
 
 .custom-recipe-filter-link {
   border: none!important;
-  width: 100%;
-  text-align: right;
+  width: auto;
+  /* text-align: right; */float: right;
   background-color: #f2f2f2;
   text-decoration: underline;
   margin-top: 7px;
-  margin-bottom: 27px;
-  padding-right: 105px!important;
+  margin-bottom: 27px;margin-right: 41px;;
+  padding: 12px 24px!important;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -282,4 +282,6 @@ header{
   .card-body > div:nth-last-child(1) {
     width: 80px;
   }
+}.mkOp27mnp {
 }
+
