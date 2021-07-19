@@ -283,3 +283,321 @@ header{
     width: 80px;
   }
 }
+header{
+  display: none!important;
+}
+
+.container-fluid {
+  background-color: #f2f2f2;
+  margin: auto;
+  padding: auto !important;
+}
+
+.sticky-inner-wrapper {
+  margin-top: 8px!important;
+}
+
+.sticky-inner-wrapper > section > div button {
+  bottom: auto;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: #d4d4d4;
+  border: none;
+  color: white;
+  width: 125px;
+  height: 45px;
+}
+
+.sticky-inner-wrapper > section > div:nth-of-type(2)>p {
+  display: none;
+}
+
+.sticky-inner-wrapper section div div {
+  width: 78px;
+  height: 78px;
+  min-width: 78px;
+  border: 3px dashed #bcb6b6;
+  background-color: #f2f2f2;margin: 3px;
+}
+.sticky-inner-wrapper > section > div {
+  display: flex;
+  align-items: center;
+}
+ 
+.sticky-inner-wrapper section {
+  display: flex !important;
+  justify-content: center;
+}
+
+.sticky-inner-wrapper > section div:nth-of-type(2) {
+  margin: 5px;
+}
+.sticky-inner-wrapper > section > div button>svg {
+  display: none;
+ }
+ 
+.container-fluid section {
+  box-shadow: none;
+}
+
+.container-fluid section div.row > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 40px;
+  column-gap: 30px;
+  padding: 0px 81px;
+  min-width: 100% !important;
+}
+
+.container-fluid > div:nth-of-type(2) {
+  margin: auto;
+  padding-right: 81px !important;
+}
+
+.container-fluid > div:nth-of-type(2) > button {
+  display: none !important;
+}
+
+.container-fluid > div:nth-of-type(2) > div {
+  display: none !important;
+}
+
+.container-fluid > div:last-child(1) button {
+  display: none;
+}
+
+.container-fluid > section > div.row > div.flex > div.card {
+  min-width: 100% !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2f2f2;
+  min-height: 0px !important;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+.card-body > p {
+  display: auto;
+}
+
+.card-body > div:nth-of-type(1) {
+  display: none;
+}
+
+.card-body > div:nth-last-child(1) {
+  margin-top: 0px !important;
+  width: 110px;
+  height: 45px;
+}
+
+.card-body > div:nth-last-child(1) + div {
+  display: none;
+}
+
+.card-text {
+  height: 0px !important;
+}
+
+.card-title {
+  font-size: 16px;
+  height: 0px !important;
+  line-height: 24px !important;
+}
+
+.card > div > p {
+  display: none;
+  height: 0px !important;
+}
+
+.LazyLoad button {
+  display: none !important;
+}
+
+.head-count-container {
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  justify-content: baseline;
+}
+.custom-basket-heading {
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 40px;
+  margin: 0px;
+}
+.custom-basket-count {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+.head-count-container {
+  margin-right: 48px;
+}
+
+.custom-recipe-filter-link {
+  border: none!important;
+  width: auto;
+  /* text-align: right; */float: right;
+  background-color: #f2f2f2;
+  text-decoration: underline;
+  margin-top: 7px;
+  margin-bottom: 27px;margin-right: 41px;;
+  padding: 12px 24px!important;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+.container-fluid div:nth-of-type(3) button {
+  /* display: none; */
+}
+.MuiDrawer-paper div:nth-of-type(2) ul>li:nth-of-type(2n) {
+  display: none;
+}
+.MuiDrawer-paper div:nth-of-type(2) ul:last-child()
+{
+  display: none!important;
+}
+
+@media (max-width: 1439px) {
+  .container-fluid section div.row > div {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0px 44px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .custom-recipe-filter-link {
+    border: none!important;
+    width: 100%;
+    text-align:left!important;
+    background-color: #f2f2f2;
+    text-decoration: underline;
+    margin-top: 17px;
+    margin-bottom: 27px;
+    padding-right: 0px!important;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .container-fluid section div.row > div {
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 22px;
+  }
+  .sticky-inner-wrapper section {
+    display: flex !important;
+    flex-direction: column!important;
+    justify-content: center;
+  }
+  .head-count-container {
+    display: flex!important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline!important;
+    margin: 0px;
+  }
+  .custom-basket-heading{
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .custom-basket-count {
+    margin-left: 48px!important;margin-bottom: 0px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .sticky-inner-wrapper section div div {
+    width: 44px;
+    height: 44px;
+    margin: 3px;
+    min-width: 44px;
+  }
+    
+  .sticky-inner-wrapper > section > div button {
+    background-color: #d4d4d4;
+    border: none;
+    color: white;
+    width: 180px;
+    height: 45px;
+    margin-left:14.85px!important;
+  }
+   
+  .sticky-inner-wrapper > section > div button > svg {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .container-fluid section div.row > div {
+    grid-template-columns: 1fr;
+    padding: 0px 11px;
+  }
+  .sticky-inner-wrapper{
+    margin:0px!important;
+  }
+  .custom-basket-heading{
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 32px;
+  }
+  .custom-basket-count {
+    margin-left: 48px!important;margin-bottom: 0px;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 24px;
+  }
+  .sticky-inner-wrapper > section > div button {
+    background-color: #d4d4d4;
+    border: none;
+    color: white;
+    width: 180px;
+    height: 45px;
+    margin-left:5.85px!important;
+  }
+}
+
+@media (max-width: 374px) {
+  .card-body > div:nth-last-child(1) {
+    width: 80px;
+  }
+}
+
+.sticky-inner-wrapper section>div img {
+    pointer-events: none!important;
+}
+
+.MuiDrawer-root div:nth-of-type(3) div:nth-of-type(2)>div>div>div.flex {
+    display: none;
+}
+
+.MuiDrawer-root div:nth-of-type(3) div:nth-of-type(2)>div>div>h3 {
+    transform: translateY(25px);
+}
+.MuiPaper-root div:nth-of-type(1)> span {
+  display: none;
+}
+.sticky-inner-wrapper section>div img {
+    pointer-events: none!important;
+}
+
+.MuiDrawer-root div:nth-of-type(3) div:nth-of-type(2)>div>div>div.flex {
+    display: none;
+}
+
+.MuiDrawer-root div:nth-of-type(3) div:nth-of-type(2)>div>div>h3 {
+    transform: translateY(25px);
+}
+.custom-addcart-heading {
+  margin: 0;font-weight: 800;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-align: center;}

@@ -3,7 +3,6 @@
     function miniBasketChanges() {
         var targetNode = document.querySelector('.sticky-inner-wrapper > section > div');
         targetNode.insertAdjacentHTML('beforebegin', '<div class="head-count-container"><p class="custom-basket-heading">Your Trial Box</p> <p class="custom-basket-count">Choose 4 recipes</p></div>');
-
         var configObject = {
             childList:true,
             characterData: true,
@@ -59,11 +58,13 @@
             CtaObserver.observe(cta, ctaObject);
         });
     }
+    
     function init() {
         miniBasketChanges();
         filterLinkChanges();
         veganLabel();
         recipeCtaChanges();
+        addCartHeading();
     }
     init();
 }());

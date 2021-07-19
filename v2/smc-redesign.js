@@ -59,11 +59,16 @@
             CtaObserver.observe(cta, ctaObject);
         });
     }
+    function addCartHeading() {
+        var targetnode=document.querySelector('.MuiPaper-root>div');
+        targetnode.insertAdjacentHTML('afterbegin','<p class="custom-addcart-heading">Your Trial Box</p>');
+    }
     function init() {
         miniBasketChanges();
         filterLinkChanges();
         veganLabel();
         recipeCtaChanges();
+        addCartHeading();
     }
     init();
 }());
