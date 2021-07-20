@@ -64,7 +64,6 @@
         filterLinkChanges();
         veganLabel();
         recipeCtaChanges();
-        addCartHeading();
     }
     init();
 }());

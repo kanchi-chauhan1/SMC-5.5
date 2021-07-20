@@ -1,4 +1,79 @@
+
+
 (function () {
+
+    function waitUntil(predicate, success, error) {
+        var int = setInterval(function () {
+            if (predicate()) {
+                clearInterval(int);
+                int = null;
+                success();
+            }
+        }, 500);
+
+        setTimeout(function () {
+            if (int !== null) {
+                clearInterval(int);
+                if (typeof (error) === 'function') {
+                    error();
+                }
+            }
+        }, 15000);
+    }
+
+    (function (win) {
+        'use strict';
+
+        var listeners = [],
+            doc = win.document,
+            MutationObserver = win.MutationObserver || win.WebKitMutationObserver,
+            observer;
+
+        function ready(selector, fn) {
+            // Store the selector and callback to be monitored
+            listeners.push({
+                selector: selector,
+                fn: fn
+            });
+            if (!observer) {
+                // Watch for changes in the document
+                observer = new MutationObserver(check);
+                observer.observe(doc.documentElement, {
+                    childList: true,
+                    subtree: true
+                });
+            }
+            // Check if the element is currently in the DOM
+            check();
+        }
+
+        function check() {
+            // Check the DOM for elements matching a stored selector
+            for (var i = 0, len = listeners.length, listener, elements; i < len; i++) {
+                listener = listeners[i];
+                // Query for elements matching the specified selector
+                elements = doc.querySelectorAll(listener.selector);
+                for (var j = 0, jLen = elements.length, element; j < jLen; j++) {
+                    element = elements[j];
+                    if (!element.ready) {
+                        element.ready = [];
+                    }
+                    // Make sure the callback isn't invoked with the
+                    // same listener more than once
+                    // due to other mutations
+                    if (!element.ready[i]) {
+                        element.ready[i] = true;
+                        // Invoke the callback with the element
+                        listener.fn.call(element, element);
+                    }
+                }
+            }
+        }
+
+        // Expose 'ready'
+        win.optiReady = ready;
+
+    })(this);
 
     function miniBasketChanges() {
         var targetNode = document.querySelector('.sticky-inner-wrapper > section > div');
@@ -24,7 +99,7 @@
                 basketCounter.textContent = "You're all set!";
             }
         });   
-        basketObserver.observe(targetNode, configObject);  
+        basketObserver.observe(targetNode, configObject);
     }
 
     function filterLinkChanges() {
@@ -60,15 +135,25 @@
         });
     }
     function addCartHeading() {
-        var targetnode=document.querySelector('.MuiPaper-root>div');
-        targetnode.insertAdjacentHTML('afterbegin','<p class="custom-addcart-heading">Your Trial Box</p>');
+        var targetnode=document.querySelector('.MuiPaper-root>div>span');
+        targetnode.innerText="Your Trial Box";
+        document.querySelector('.MuiDrawer-root div:nth-of-type(3) div:nth-of-type(2) div:nth-of-type(5) div:nth-of-type(1) p:nth-of-type(1)').innerText="Trial Box";
     }
+    
+    
     function init() {
         miniBasketChanges();
         filterLinkChanges();
         veganLabel();
         recipeCtaChanges();
-        addCartHeading();
     }
-    init();
+
+    waitUntil(function () {
+        return document.querySelectorAll(config.sel.tile).length > 0;
+    }, function () {
+        init();
+    });
+    window.optiReady('.MuiDrawer-root', function () {
+        addCartHeading();
+    });
 }());

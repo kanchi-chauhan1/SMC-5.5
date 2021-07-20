@@ -159,7 +159,7 @@ header{
 .custom-recipe-filter-link {
   border: none!important;
   width: auto;
-  /* text-align: right; */float: right;
+  float: right;
   background-color: #f2f2f2;
   text-decoration: underline;
   margin-top: 7px;
@@ -190,13 +190,14 @@ header{
 @media (max-width: 1023px) {
   .custom-recipe-filter-link {
     border: none!important;
-    width: 100%;
-    text-align:left!important;
+    width: auto;
+    float: left;
     background-color: #f2f2f2;
     text-decoration: underline;
-    margin-top: 17px;
+    margin-top: 7px;
     margin-bottom: 27px;
-    padding-right: 0px!important;
+    margin-left: 41px;;
+    padding: 12px 24px!important;
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;
@@ -601,3 +602,9 @@ line-height: 24px;
 display: flex;
 align-items: center;
 text-align: center;}
+.container-fluid div:nth-of-type(3) button.flex-center {
+  display: none;
+}
+.container-fluid div:nth-of-type(3) {
+  padding: 0px;
+}
