@@ -476,13 +476,13 @@ header{
 @media (max-width: 1023px) {
   .custom-recipe-filter-link {
     border: none!important;
-    width: 100%;
-    text-align:left!important;
+    width: auto;
+    float: left;
+    margin-left: 0px;
     background-color: #f2f2f2;
     text-decoration: underline;
     margin-top: 17px;
-    margin-bottom: 27px;
-    padding-right: 0px!important;
+    margin-bottom: 27px;padding: 0px!important;
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;

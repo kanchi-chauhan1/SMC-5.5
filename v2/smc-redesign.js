@@ -146,7 +146,9 @@
     }
 
     waitUntil(function () {
-        return document.querySelector('.MuiPaper-root>div>span').length > 0 && document.querySelector('.MuiDrawer-root div:nth-of-type(3) div:nth-of-type(2) div:nth-of-type(5) div:nth-of-type(1) p:nth-of-type(1)').length > 0 && document.querySelector('.sticky-inner-wrapper > section > div').length > 0 && document.querySelectorAll('.card-body > div:last-child').length > 0 && document.querySelectorAll('.card-body div .card-text').length > 0 && document.querySelector('.custom-recipe-filter-link').length > 0 && document.querySelector('.sticky-outer-wrapper').length > 0 && document.querySelector('.custom-basket-count').length > 0 && document.querySelector('.sticky-inner-wrapper > section > div').length > 0;
+        return  document.querySelectorAll('.sticky-inner-wrapper > section > div').length > 0
+            && document.querySelectorAll('.card-body > div:last-child').length > 0
+            && document.querySelectorAll('.card-body div .card-text').length > 0
     }, function () {
         init();
     });
