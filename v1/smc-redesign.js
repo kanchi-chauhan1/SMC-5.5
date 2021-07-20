@@ -100,7 +100,7 @@
     }
 
     function filterLinkChanges() {
-        var filterLinkHTML = '<button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button>';
+        var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
         document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
         document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () {
             document.querySelector('header + .container-fluid>div:nth-of-type(2) button').click();
@@ -140,7 +140,7 @@
     }
 
     waitUntil(function () {
-        return document.querySelectorAll('.card-body > div:last-child').length > 0 && document.querySelectorAll('.card-body div .card-text').length > 0 && document.querySelector('.sticky-inner-wrapper > section > div').length > 0 && document.querySelectorAll('.sticky-inner-wrapper > section > div > img').length > 0;
+        return document.querySelectorAll('.card-body > div:last-child').length > 0
     }, function () {
         init();
     });
