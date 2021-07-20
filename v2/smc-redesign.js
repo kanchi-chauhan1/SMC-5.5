@@ -1,5 +1,3 @@
-
-
 (function () {
 
     function waitUntil(predicate, success, error) {
