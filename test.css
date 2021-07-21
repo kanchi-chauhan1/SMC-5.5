@@ -1,0 +1,17 @@
+.container-fluid>section>div {
+    min-width: 100%;
+}
+
+.card-body div:nth-last-child(1) {
+    width: 110px;
+    height: 45px;
+}
+
+.card div.card-body>a>div {
+    width: 159px;
+    height: 45px!important;
+}
+
+ul.list-unstyled.flex-one {
+    display: none;
+}
