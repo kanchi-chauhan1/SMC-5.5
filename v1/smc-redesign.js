@@ -110,8 +110,10 @@
     function veganLabel() {
         document.querySelectorAll('.card-body div .card-text').forEach(function (label) {
            if (label.textContent.trim().toLowerCase() === "vegan" || label.textContent.trim().toLowerCase() === "vegetarian") {
+               label.classList.remove("custom-veg-label");
+           } else {
                label.classList.add("custom-veg-label");
-           } 
+           }
         });
     }
 
