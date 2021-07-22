@@ -104,7 +104,7 @@
         var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
         document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
         document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () {
-            document.querySelector('header + .container-fluid div:nth-of-type(3)>button.flex-center').click(); 
+            document.querySelector('header + .container-fluid div:nth-of-type(3) button:nth-of-type(1)').click(); 
         });
     }
 
@@ -136,7 +136,7 @@
     }
     function addCartHeading() {
         var targetnode=document.querySelector('.MuiPaper-root>div>span');
-        targetnode.innerText="Your Trial Box";
+        targetnode.innerText="Your trial box";
         document.querySelector('.MuiDrawer-root div:nth-of-type(3) div:nth-of-type(2) div:nth-of-type(5) div:nth-of-type(1) p:nth-of-type(1)').innerText="Trial Box";
     }
     

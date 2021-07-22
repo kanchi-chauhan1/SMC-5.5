@@ -153,10 +153,6 @@ header{
   margin-right: 48px;
 }
 
-.MuiDrawer-root.MuiDrawer-modal{
-  display: none;
-}
-
 ul.list-unstyled.flex-one{
   display: none!important;
 }
@@ -168,6 +164,16 @@ ul.list-unstyled.flex-one{
 .J2hCJtFJF{
   display: inline-table;
 }
+
+.MuiDrawer-paper div:nth-of-type(2) ul>li:nth-of-type(2n) {
+  display: none;
+}
+
+.MuiDrawer-paper div:nth-of-type(2) ul:last-child()
+{
+  display: none!important;
+}
+
 
 @media (max-width: 1439px) {
   .container-fluid section div.row > div {

@@ -75,7 +75,7 @@
 
     function miniBasketChanges() {
         var targetNode = document.querySelector('.sticky-inner-wrapper > section > div');
-        targetNode.insertAdjacentHTML('beforebegin', '<div class="head-count-container"><p class="custom-basket-heading">Your Trial Box</p> <p class="custom-basket-count">Choose 4 recipes</p></div>');
+        targetNode.insertAdjacentHTML('beforebegin', '<div class="head-count-container"><p class="custom-basket-heading">Your trial box</p> <p class="custom-basket-count">Choose 4 recipes</p></div>');
         var configObject = {
             childList:true,
             characterData: true,
@@ -103,7 +103,7 @@
         var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
         document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
         document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 
-            document.querySelector('header + .container-fluid div:nth-of-type(3)>button.flex-center').click(); 
+            document.querySelector('header + .container-fluid div:nth-of-type(3) button:nth-of-type(1)').click(); 
         });
     }
 
