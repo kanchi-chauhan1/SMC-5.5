@@ -608,7 +608,7 @@ ul.list-unstyled.flex-one {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 766px) {
   .container-fluid section div.row > div {
     grid-template-columns: 1fr;
     padding: 0px 11px;
