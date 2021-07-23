@@ -74,6 +74,9 @@
     })(this);
 
     function miniBasketChanges() {
+        if (document.querySelector('.head-count-container')) {
+            document.querySelector('.head-count-container').remove();
+        }
         var targetNode = document.querySelector('.sticky-inner-wrapper > section > div');
         targetNode.insertAdjacentHTML('beforebegin', '<div class="head-count-container"><p class="custom-basket-heading">Your trial box</p> <p class="custom-basket-count">Choose 4 recipes</p></div>');
         var configObject = {
@@ -100,6 +103,9 @@
     }
 
     function filterLinkChanges() {
+        if (document.querySelector('.custom-recipe-filter-link-container')) {
+            document.querySelector('.custom-recipe-filter-link-container').remove();
+        }
         var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
         document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
         document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 

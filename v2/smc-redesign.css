@@ -12,10 +12,6 @@ header{
   min-width: 100%;
 }
 
-.sticky-inner-wrapper {
-  margin-top: 8px!important;
-}
-
 .sticky-inner-wrapper > section > div button {
   bottom: auto;
   font-size: 14px;
@@ -287,10 +283,6 @@ header{
   padding: auto !important;
 }
 
-.sticky-inner-wrapper {
-  margin-top: 8px!important;
-}
-
 .sticky-inner-wrapper > section > div button {
   bottom: auto;
   font-size: 14px;
@@ -537,6 +529,10 @@ header{
 
 ul.list-unstyled.flex-one {
   display: none;
+}
+
+.card-body div:nth-last-child(1)>button.disabled {
+  height: 62px;
 }
 
 @media (max-width: 1439px) {

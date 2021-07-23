@@ -12,10 +12,6 @@ header{
   min-width: 100%;
 }
 
-.sticky-inner-wrapper {
-  margin-top: 8px!important;
-}
-
 .sticky-inner-wrapper > section > div button {
   bottom: auto;
   font-size: 14px;
@@ -174,6 +170,9 @@ ul.list-unstyled.flex-one{
   display: none!important;
 }
 
+.card-body div:nth-last-child(1)>button.disabled {
+  height: 62px;
+}
 
 @media (max-width: 1439px) {
   .container-fluid section div.row > div {
@@ -289,10 +288,6 @@ header{
   padding: auto !important;
 }
 
-.sticky-inner-wrapper {
-  margin-top: 8px!important;
-}
-
 .sticky-inner-wrapper > section > div button {
   bottom: auto;
   font-size: 14px;
@@ -383,7 +378,7 @@ header{
 
 .card-body > div:nth-of-type(1) {
   position: absolute;
-  bottom: -48px;
+  bottom: -22px;
   left: 7px;
 }
 
