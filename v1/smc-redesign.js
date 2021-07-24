@@ -86,6 +86,7 @@
         };
         var basketObserver = new MutationObserver(function () {
             var basketCounter = document.querySelector('.custom-basket-count');
+            var continueButton=document.querySelector('.sticky-inner-wrapper > section > div button');
             var recipeCount = document.querySelectorAll('.sticky-inner-wrapper > section > div > img').length;
             if (recipeCount === 0) {
                 basketCounter.textContent = "Choose 4 recipes";
@@ -97,6 +98,7 @@
                 basketCounter.textContent = "Add 1 more recipe";
             } else {
                 basketCounter.textContent = "You're all set!";
+                continueButton.classList.add("custom-continue-button");
             }
         });   
         basketObserver.observe(targetNode, configObject);  
@@ -116,8 +118,6 @@
     function veganLabel() {
         document.querySelectorAll('.card-body div .card-text').forEach(function (label) {
            if (label.textContent.trim().toLowerCase() === "vegan" || label.textContent.trim().toLowerCase() === "vegetarian") {
-               label.classList.remove("custom-veg-label");
-           } else {
                label.classList.add("custom-veg-label");
            }
         });
@@ -148,7 +148,7 @@
     }
 
     waitUntil(function () {
-        return document.querySelectorAll('.card-body > div:last-child').length > 0;
+        return document.querySelectorAll('.card-body > div:last-child').length > 0 && document.querySelectorAll('.card-body > div .card-text').length>0;
     }, function () {
         init();
     });
