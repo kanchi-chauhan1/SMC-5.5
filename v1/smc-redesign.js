@@ -158,6 +158,14 @@
            }
         });
     }
+
+    function ctaTextChange(cta) {
+            var count = cta.querySelector('p');
+            if (count) {
+                count.textContent = count.textContent.replace(/\D/g, "");
+            }
+        }
+
     function recipeCtaChanges() {
         document.querySelectorAll('.card-body > div:last-child').forEach(function (cta) {
             var ctaObject = {
@@ -166,12 +174,10 @@
                 childList: true
             };
             var CtaObserver = new MutationObserver(function () {
-                var count = cta.querySelector('p');
-                if (count) {
-                    count.textContent = count.textContent.replace(/\D/g, "");
-                }
+                ctaTextChange(cta);
             });
             CtaObserver.observe(cta, ctaObject);
+            ctaTextChange(cta);
         });
     }
     
