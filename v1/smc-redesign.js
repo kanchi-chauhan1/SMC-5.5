@@ -158,7 +158,6 @@
            }
         });
     }
-
     function recipeCtaChanges() {
         document.querySelectorAll('.card-body > div:last-child').forEach(function (cta) {
             var ctaObject = {
@@ -188,8 +187,5 @@
         return document.querySelectorAll('.card-body > div:last-child').length > 0 && document.querySelectorAll('.card-body > div .card-text').length>0;
     }, function () {
         init();
-    });
-    window.optiReady('.MuiPaper-root div ul', function (ele) {
-        filterMenuChanges(ele);
     });
 }());
