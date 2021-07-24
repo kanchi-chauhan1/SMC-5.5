@@ -537,6 +537,10 @@ ul.list-unstyled.flex-one {
   align-items: center;
 }
 
+.custom-filter-li-hide{
+  display:none;
+}
+
 @media (max-width: 1439px) {
   .container-fluid section div.row > div {
     grid-template-columns: 1fr 1fr 1fr;
@@ -634,10 +638,3 @@ ul.list-unstyled.flex-one {
     margin-left:5.85px!important;
   }
 }
-/*
-@media (max-width: 374px) {
-  .card-body > div:nth-last-child(1) {
-    width: 80px;
-  }
-}
-*/

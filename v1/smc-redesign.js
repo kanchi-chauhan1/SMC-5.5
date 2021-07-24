@@ -86,7 +86,7 @@
         };
         var basketObserver = new MutationObserver(function () {
             var basketCounter = document.querySelector('.custom-basket-count');
-            var continueButton=document.querySelector('.sticky-inner-wrapper > section > div button');
+            var continueButton=document.querySelector('.sticky-inner-wrapper > section > div:nth-of-type(2) > p');
             var recipeCount = document.querySelectorAll('.sticky-inner-wrapper > section > div > img').length;
             if (recipeCount === 0) {
                 basketCounter.textContent = "Choose 4 recipes";
@@ -104,6 +104,17 @@
         basketObserver.observe(targetNode, configObject);  
     }
 
+    function continueLink() {
+        var targetNode = document.querySelector('.sticky-inner-wrapper > section > div:nth-of-type(2) > p');
+        targetNode.insertAdjacentHTML('beforebegin','<a href="https://www.simplycook.com/recipes/checkout-multi-step/summary" class="custom-continue-link">Continue</a>');
+        document.querySelector('.custom-continue-link').addEventListener('click', function (event) {
+            event.stopImmediatePropagation();
+        });
+        document.querySelector('.sticky-inner-wrapper > section > div:nth-of-type(2)').addEventListener('click', function (event) {
+            event.stopImmediatePropagation();
+        });
+    }
+
     function filterLinkChanges() {
         if (document.querySelector('.custom-recipe-filter-link-container')) {
             document.querySelector('.custom-recipe-filter-link-container').remove();
@@ -113,6 +124,31 @@
         document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 
             document.querySelector('header + .container-fluid div:nth-of-type(3) button:nth-of-type(1)').click(); 
         });
+    }
+
+    function filterToggleList(ul) {
+        console.log('working');
+        if (document.querySelector('.MuiPaper-root').innerHTML.toLowerCase().indexOf('>spiciness<') > -1) {
+            ul.querySelectorAll('li').forEach(function (li) {
+                var text = li.innerText.toLowerCase().trim();
+                if (text !== 'spiciness' && text !== 'dietary requirements' && text !== 'allergens') {
+                    li.classList.add('custom-filter-li-hide');
+                } else {
+                    li.classList.remove('custom-filter-li-hide');
+                }
+            });
+        }
+    }
+
+    function filterMenuChanges(ul) {
+        console.log('asdf');
+        var filterObserver = new MutationObserver(function () {
+            filterToggleList(ul);
+        });
+        filterObserver.observe(ul, {
+            childList: true
+        });
+        filterToggleList(ul);
     }
 
     function veganLabel() {
@@ -142,6 +178,7 @@
     
     function init() {
         miniBasketChanges();
+        continueLink();
         filterLinkChanges();
         veganLabel();
         recipeCtaChanges();
@@ -151,5 +188,8 @@
         return document.querySelectorAll('.card-body > div:last-child').length > 0 && document.querySelectorAll('.card-body > div .card-text').length>0;
     }, function () {
         init();
+    });
+    window.optiReady('.MuiPaper-root div ul', function (ele) {
+        filterMenuChanges(ele);
     });
 }());

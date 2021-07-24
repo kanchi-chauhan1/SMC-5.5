@@ -13,14 +13,7 @@ header{
 }
 
 .sticky-inner-wrapper > section > div button {
-  bottom: auto;
-  font-size: 14px;
-  line-height: 17px;
-  background-color: #d4d4d4;
-  border: none;
-  color: white;
-  width: 125px;
-  height: 45px;
+  display: none;
 }
 
 .sticky-inner-wrapper > section > div:nth-of-type(2) > p {
@@ -176,6 +169,27 @@ ul.list-unstyled.flex-one{
   align-items: center;
 }
 
+.custom-filter-li-hide{
+  display:none;
+}
+
+.custom-continue-link {
+  bottom: auto;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: #d4d4d4;
+  text-decoration: none!important;
+  color: white!important;
+  border: none;
+  color: white;
+  width: 125px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
 @media (max-width: 1439px) {
   .container-fluid section div.row > div {
     grid-template-columns: 1fr 1fr 1fr;
@@ -232,13 +246,21 @@ ul.list-unstyled.flex-one{
     min-width: 44px;
   }
     
-  .sticky-inner-wrapper > section > div button {
+  .custom-continue-link {
     background-color: #d4d4d4;
     border: none;
     color: white;
     width: 180px;
     height: 45px;
+    text-decoration: none!important;
+    color: white!important;
+    text-decoration: none!important;
+    color: white!important;
     margin-left:14.85px!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
   }
    
   .sticky-inner-wrapper > section > div button > svg {
@@ -265,13 +287,19 @@ ul.list-unstyled.flex-one{
     font-size: 10px;
     line-height: 24px;
   }
-  .sticky-inner-wrapper > section > div button {
+  .custom-continue-link {
     background-color: #d4d4d4;
     border: none;
     color: white;
     width: 180px;
     height: 45px;
     margin-left:5.85px!important;
+    text-decoration: none!important;
+    color: white!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
   }
 }
 
@@ -283,17 +311,6 @@ header{
   background-color: #f2f2f2;
   margin: auto;
   padding: auto !important;
-}
-
-.sticky-inner-wrapper > section > div button {
-  bottom: auto;
-  font-size: 14px;
-  line-height: 17px;
-  background-color: #d4d4d4;
-  border: none;
-  color: white;
-  width: 125px;
-  height: 45px;
 }
 
 .sticky-inner-wrapper > section > div:nth-of-type(2)>p {
@@ -576,13 +593,19 @@ ul.list-unstyled.flex-one {
     min-width: 44px;
   }
     
-  .sticky-inner-wrapper > section > div button {
+  .custom-continue-link {
     background-color: #d4d4d4;
     border: none;
     color: white;
     width: 180px;
     height: 45px;
     margin-left:14.85px!important;
+    text-decoration: none!important;
+    color: white!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
   }
    
   .sticky-inner-wrapper > section > div button > svg {
@@ -609,12 +632,18 @@ ul.list-unstyled.flex-one {
     font-size: 10px;
     line-height: 24px;
   }
-  .sticky-inner-wrapper > section > div button {
+  .custom-continue-link{
     background-color: #d4d4d4;
     border: none;
     color: white;
     width: 180px;
     height: 45px;
     margin-left:5.85px!important;
+    text-decoration: none!important;
+    color: white!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
   }
 }

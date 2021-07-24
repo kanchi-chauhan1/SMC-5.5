@@ -114,6 +114,31 @@
         });
     }
 
+    function filterToggleList(ul) {
+        console.log('working');
+        if (document.querySelector('.MuiPaper-root').innerHTML.toLowerCase().indexOf('>spiciness<') > -1) {
+            ul.querySelectorAll('li').forEach(function (li) {
+                var text = li.innerText.toLowerCase().trim();
+                if (text !== 'spiciness' && text !== 'dietary requirements' && text !== 'allergens') {
+                    li.classList.add('custom-filter-li-hide');
+                } else {
+                    li.classList.remove('custom-filter-li-hide');
+                }
+            });
+        }
+    }
+
+    function filterMenuChanges(ul) {
+        console.log('asdf');
+        var filterObserver = new MutationObserver(function () {
+            filterToggleList(ul);
+        });
+        filterObserver.observe(ul, {
+            childList: true
+        });
+        filterToggleList(ul);
+    }
+
     function veganLabel() {
         document.querySelectorAll('.card-body div .card-text').forEach(function (label) {
             if (label.textContent.trim().toLowerCase() === "vegan" || label.textContent.trim().toLowerCase() === "vegetarian") {
@@ -159,5 +184,8 @@
     });
     window.optiReady('.MuiDrawer-root', function () {
         addCartHeading();
+    });
+    window.optiReady('.MuiPaper-root div ul', function (ele) {
+        filterMenuChanges(ele);
     });
 }());
