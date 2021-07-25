@@ -67,7 +67,6 @@ header{
 
 .container-fluid > div:nth-of-type(2) {
   margin: auto;
-  /* padding-right: 81px !important; */
 }
 
 .container-fluid > div:nth-of-type(2) > div {
@@ -145,18 +144,6 @@ header{
   margin-right: 48px;
 }
 
-.MuiDrawer-paper div:nth-of-type(2) ul>li:nth-of-type(2n) {
-  display: none;
-}
-.MuiDrawer-paper div:nth-of-type(2) ul:last-child()
-{
-  display: none!important;
-}
-
-ul.list-unstyled.flex-one{
-  display: none!important;
-}
-
 .card-subtitle, .card-text:last-child{
   width: -webkit-fill-available;
 }
@@ -171,6 +158,10 @@ ul.list-unstyled.flex-one{
 
 .m2g_6pmcU div {
   display: none;
+}
+
+.custom-continue-button{
+  background-color: #63a431!important;
 }
 
 @media (max-width: 1439px) {
@@ -242,6 +233,7 @@ ul.list-unstyled.flex-one{
     display: none;
   }
 }
+
 
 @media (max-width: 375px) {
   .container-fluid section div.row > div {
@@ -424,10 +416,6 @@ header{
   margin-right: 48px;
 }
 
-.MuiDrawer-paper div:nth-of-type(2) ul>li:nth-of-type(2n) {
-  display: none;
-}
-
 .MuiDrawer-paper div:nth-of-type(2) ul:last-child()
 {
   display: none!important;
@@ -523,10 +511,6 @@ header{
   height: 45px!important;
 }
 
-ul.list-unstyled.flex-one {
-  display: none;
-}
-
 .m2g_6pmcU div {
   display: none;
 }
@@ -538,9 +522,13 @@ ul.list-unstyled.flex-one {
 }
 
 .custom-filter-li-hide{
-  display:none;
+  display: none !important;
 }
 
+
+.MuiPaper-root div:nth-of-type(2) ul:nth-of-type(3) {
+  display: none;
+}
 @media (max-width: 1439px) {
   .container-fluid section div.row > div {
     grid-template-columns: 1fr 1fr 1fr;
@@ -549,18 +537,19 @@ ul.list-unstyled.flex-one {
 }
 
 @media (max-width: 1023px) {
-  .custom-recipe-filter-link {
-    border: none!important;
-    width: auto;
-    float: left;
-    margin-left: 0px;
-    background-color: #f2f2f2;
-    text-decoration: underline;
-    margin-bottom: 27px;
-    padding: 0px!important;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 24px;
+  .custom-continue-link {
+    background-color: #d4d4d4;
+    border: none;
+    color: white;
+    width: 120px;
+    height: 45px;
+    margin-left:14.85px!important;
+    text-decoration: none!important;
+    color: white!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
   }
   .container-fluid section div.row > div {
     grid-template-columns: 1fr 1fr;
@@ -636,5 +625,19 @@ ul.list-unstyled.flex-one {
     width: 180px;
     height: 45px;
     margin-left:5.85px!important;
+  }
+  .custom-continue-link{
+    background-color: #d4d4d4;
+    border: none;
+    color: white;
+    width: 100px;
+    height: 45px;
+    margin-left:5.85px!important;
+    text-decoration: none!important;
+    color: white!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
   }
 }

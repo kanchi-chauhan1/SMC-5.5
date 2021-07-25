@@ -73,6 +73,8 @@
 
     })(this);
 
+
+
     function miniBasketChanges() {
         if (document.querySelector('.head-count-container')) {
             document.querySelector('.head-count-container').remove();
@@ -86,7 +88,7 @@
         };
         var basketObserver = new MutationObserver(function () {
             var basketCounter = document.querySelector('.custom-basket-count');
-            var continueButton=document.querySelector('.sticky-inner-wrapper > section > div:nth-of-type(2) > p');
+            var continueButton=document.querySelector('.custom-continue-link');
             var recipeCount = document.querySelectorAll('.sticky-inner-wrapper > section > div > img').length;
             if (recipeCount === 0) {
                 basketCounter.textContent = "Choose 4 recipes";
@@ -105,6 +107,9 @@
     }
 
     function continueLink() {
+        if (document.querySelector('.custom-continue-link')) {
+            document.querySelector('.custom-continue-link').remove();
+        }
         var targetNode = document.querySelector('.sticky-inner-wrapper > section > div:nth-of-type(2) > p');
         targetNode.insertAdjacentHTML('beforebegin','<a href="https://www.simplycook.com/recipes/checkout-multi-step/summary" class="custom-continue-link">Continue</a>');
         document.querySelector('.custom-continue-link').addEventListener('click', function (event) {
@@ -193,5 +198,8 @@
         return document.querySelectorAll('.card-body > div:last-child').length > 0 && document.querySelectorAll('.card-body > div .card-text').length>0;
     }, function () {
         init();
+    });
+    window.optiReady('.MuiPaper-root div ul', function (ele) {
+        filterMenuChanges(ele);
     });
 }());
