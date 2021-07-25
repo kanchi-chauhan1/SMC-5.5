@@ -87,7 +87,7 @@
         };
         var basketObserver = new MutationObserver(function () {
             var basketCounter = document.querySelector('.custom-basket-count');
-            var continueButton=document.querySelector('.custom-continue-link');
+            var continueButton=document.querySelector('.sticky-inner-wrapper > section > div button');
             var recipeCount = document.querySelectorAll('.sticky-inner-wrapper > section > div > img').length;
             if (recipeCount === 0) {
                 basketCounter.textContent = "Choose 4 recipes";
@@ -99,24 +99,10 @@
                 basketCounter.textContent = "Add 1 more recipe";
             } else {
                 basketCounter.textContent = "You're all set!";
-                continueButton.classList.add("custom-continue-button");
+                continueButton.classList.add('custom-continue-button');
             }
-        });   
+        });
         basketObserver.observe(targetNode, configObject);
-    }
-
-    function continueLink() {
-        if (document.querySelector('.custom-continue-link')) {
-            document.querySelector('.custom-continue-link').remove();
-        }
-        var targetNode = document.querySelector('.sticky-inner-wrapper > section > div:nth-of-type(2) > p');
-        targetNode.insertAdjacentHTML('beforebegin','<a href="https://www.simplycook.com/recipes/checkout-multi-step/summary" class="custom-continue-link">Continue</a>');
-        document.querySelector('.custom-continue-link').addEventListener('click', function (event) {
-            event.stopImmediatePropagation();
-        });
-        document.querySelector('.sticky-inner-wrapper > section > div:nth-of-type(2)').addEventListener('click', function (event) {
-            event.stopImmediatePropagation();
-        });
     }
 
     function filterLinkChanges() {
@@ -191,7 +177,6 @@ function recipeCtaChanges() {
     
     function init() {
         miniBasketChanges();
-        continueLink();
         filterLinkChanges();
         veganLabel();
         recipeCtaChanges();
