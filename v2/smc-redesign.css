@@ -56,7 +56,7 @@ header{
   box-shadow: none;
 }
 
-.container-fluid section div.row > div {
+.container-fluid section div.row > div.flex {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 40px;
@@ -81,6 +81,10 @@ header{
   min-width: 100% !important;
   padding: 0px !important;
   margin: 0px !important;
+}
+
+.container-fluid div:nth-of-type(4) {
+  margin-top: 0px;
 }
 
 .card-body {
@@ -165,7 +169,7 @@ header{
 }
 
 @media (max-width: 1439px) {
-  .container-fluid section div.row > div {
+  .container-fluid section div.row > div.flex  {
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0px 44px;
   }
@@ -186,7 +190,7 @@ header{
     font-size: 14px;
     line-height: 24px;
   }
-  .container-fluid section div.row > div {
+  .container-fluid section div.row > div.flex  {
     grid-template-columns: 1fr 1fr;
     padding: 0px 22px;
   }
@@ -236,7 +240,7 @@ header{
 
 
 @media (max-width: 375px) {
-  .container-fluid section div.row > div {
+  .container-fluid section div.row > div.flex  {
     grid-template-columns: 1fr;
     padding: 0px 11px;
   }
@@ -317,7 +321,7 @@ header{
   box-shadow: none;
 }
 
-.container-fluid section div.row > div {
+.container-fluid section div.row > div.flex {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 40px;
@@ -365,7 +369,7 @@ header{
 
 .card-body > div:nth-of-type(1) {
   position: absolute;
-  bottom: -22px;
+  bottom: -56px;
   left: 7px;
 }
 
@@ -514,11 +518,11 @@ header{
 }
 
 .custom-filter-li-hide{
-  display: none !important;
+  display: none!important;
 }
 
 @media (max-width: 1439px) {
-  .container-fluid section div.row > div {
+  .container-fluid section div.row > div.flex  {
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0px 44px;
   }
@@ -539,7 +543,7 @@ header{
     align-items: center;
     border-radius: 8px;
   }
-  .container-fluid section div.row > div {
+  .container-fluid section div.row > div.flex {
     grid-template-columns: 1fr 1fr;
     padding: 0px 22px;
   }
@@ -588,7 +592,7 @@ header{
 }
 
 @media (max-width: 766px) {
-  .container-fluid section div.row > div {
+  .container-fluid section div.row > div.flex { 
     grid-template-columns: 1fr;
     padding: 0px 11px;
   }

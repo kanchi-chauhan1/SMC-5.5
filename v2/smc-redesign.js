@@ -100,6 +100,7 @@
             } else {
                 basketCounter.textContent = "You're all set!";
                 continueButton.classList.add('custom-continue-button');
+                continueButton.click();
             }
         });
         basketObserver.observe(targetNode, configObject);
@@ -139,12 +140,12 @@
         filterToggleList(ul);
     }
 
-    function veganLabel() {
-        document.querySelectorAll('.card-body div .card-text').forEach(function (label) {
+    function veganLabel(label) {
+        // document.querySelectorAll('.card-body div .card-text').forEach(function (label) {
             if (label.textContent.trim().toLowerCase() === "vegan" || label.textContent.trim().toLowerCase() === "vegetarian") {
                 label.classList.add("custom-veg-label");
             }
-         });
+        //  });
     }
 
     function ctaTextChange(cta) {
@@ -154,8 +155,8 @@
         }
     }
 
-function recipeCtaChanges() {
-    document.querySelectorAll('.card-body > div:last-child').forEach(function (cta) {
+function recipeCtaChanges(cta) {
+    // document.querySelectorAll('.card-body > div:last-child').forEach(function (cta) {
         var ctaObject = {
             attributes: true,
             subtree: true,
@@ -166,7 +167,7 @@ function recipeCtaChanges() {
         });
         CtaObserver.observe(cta, ctaObject);
         ctaTextChange(cta);
-    });
+    // });
 }
 
     function addCartHeading() {
@@ -178,8 +179,6 @@ function recipeCtaChanges() {
     function init() {
         miniBasketChanges();
         filterLinkChanges();
-        veganLabel();
-        recipeCtaChanges();
     }
 
     waitUntil(function () {
@@ -188,10 +187,17 @@ function recipeCtaChanges() {
     }, function () {
         init();
     });
+    
     window.optiReady('.MuiDrawer-root', function () {
         addCartHeading();
     });
     window.optiReady('.MuiPaper-root div ul', function (ele) {
         filterMenuChanges(ele);
+    });
+    window.optiReady('.card-body > div:last-child', function (ele) {
+        veganLabel(ele);
+    });
+    window.optiReady('.card-body > div:last-child', function (ele) {
+        recipeCtaChanges(ele);
     });
 }());

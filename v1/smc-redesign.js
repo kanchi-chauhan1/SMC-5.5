@@ -92,12 +92,16 @@
             var recipeCount = document.querySelectorAll('.sticky-inner-wrapper > section > div > img').length;
             if (recipeCount === 0) {
                 basketCounter.textContent = "Choose 4 recipes";
+                continueButton.classList.remove("custom-continue-button");
             } else if (recipeCount === 1) {
                 basketCounter.textContent = "Add 3 more recipes";
+                continueButton.classList.remove("custom-continue-button");
             } else if (recipeCount === 2) {
                 basketCounter.textContent = "Add 2 more recipes";
+                continueButton.classList.remove("custom-continue-button");
             }  else if (recipeCount === 3) {
                 basketCounter.textContent = "Add 1 more recipe";
+                continueButton.classList.remove("custom-continue-button");
             } else {
                 basketCounter.textContent = "You're all set!";
                 continueButton.classList.add("custom-continue-button");
@@ -156,7 +160,7 @@
         filterToggleList(ul);
     }
 
-    function veganLabel() {
+    function veganLabel(label) {
         document.querySelectorAll('.card-body div .card-text').forEach(function (label) {
            if (label.textContent.trim().toLowerCase() === "vegan" || label.textContent.trim().toLowerCase() === "vegetarian") {
                label.classList.add("custom-veg-label");
@@ -171,12 +175,11 @@
             }
         }
 
-    function recipeCtaChanges() {
+    function recipeCtaChanges(cta) {
         document.querySelectorAll('.card-body > div:last-child').forEach(function (cta) {
             var ctaObject = {
                 attributes: true,
-                subtree: true,
-                childList: true
+                subtree: true
             };
             var CtaObserver = new MutationObserver(function () {
                 ctaTextChange(cta);
@@ -185,13 +188,22 @@
             ctaTextChange(cta);
         });
     }
+
+    function removePopup(){
+        if (document.querySelector('.MuiPaper-root>div>span') && document.querySelector('.MuiPaper-root>div>span').innerText === "Your first box") {
+            document.body.classList.remove("custom-popup-show");
+            console.log('remove show');
+        }
+        else {
+            document.body.classList.add("custom-popup-show");
+            console.log('add show');
+        }
+    }
     
     function init() {
         miniBasketChanges();
         continueLink();
         filterLinkChanges();
-        veganLabel();
-        recipeCtaChanges();
     }
 
     waitUntil(function () {
@@ -199,7 +211,14 @@
     }, function () {
         init();
     });
+    window.optiReady('.MuiDrawer-root', function () {
+        removePopup();
+    });
     window.optiReady('.MuiPaper-root div ul', function (ele) {
         filterMenuChanges(ele);
+    });
+    window.optiReady('header + .container-fluid > section:nth-of-type(1) .card:first-child .card-body', function () {
+        recipeCtaChanges();
+        veganLabel();
     });
 }());
