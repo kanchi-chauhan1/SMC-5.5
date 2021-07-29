@@ -353,6 +353,9 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 .custom-popup-show .MuiDrawer-root{
   display: block !important;
 }
+.MuiPaper-root div:nth-of-type(2)>ul>li{
+  padding:20px 29px 20px 13px!important;
+}
 
 @media (max-width: 1439px) {
   .container-fluid section div.row > div.flex{
@@ -442,7 +445,6 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
     line-height: 24px;
     margin-right: 0px !important;
   }
-  
 }
 
 @media (max-width: 375px) {
@@ -461,7 +463,6 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
   .sticky-inner-wrapper{
     margin:0px!important;
   }
-
   .head-count-container{
     width: 100%;
     margin-right:0px!important;
@@ -469,6 +470,5 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
   .custom-basket-count{
     margin:0px!important;
     margin-right:0px!important;
-
   }
 }
