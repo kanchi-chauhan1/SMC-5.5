@@ -121,11 +121,12 @@ header{
 }
 
 .head-count-container {
-  height: 100%; 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   justify-content: baseline;
+  margin-right: 48px;
+  align-items: normal!important;
 }
 .custom-basket-heading {
   font-weight: 800;
@@ -137,9 +138,7 @@ header{
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-}
-.head-count-container {
-  margin-right: 48px;
+  margin: 0px;
 }
 
 .card-subtitle, .card-text:last-child{
@@ -195,7 +194,7 @@ header{
 }
 .sticky-inner-wrapper > section > div {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
 }
  
 .sticky-inner-wrapper section {
@@ -293,28 +292,6 @@ header{
 
 .LazyLoad button {
   display: none !important;
-}
-
-.head-count-container {
-  height: 100%; 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  justify-content: baseline;
-}
-.custom-basket-heading {
-  font-weight: 800;
-  font-size: 25px;
-  line-height: 40px;
-  margin: 0px;
-}
-.custom-basket-count {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-}
-.head-count-container {
-  margin-right: 48px;
 }
 
 .custom-recipe-filter-link {
@@ -433,29 +410,6 @@ header{
     grid-template-columns: 1fr 1fr;
     padding: 0px 22px;
   }
-  .sticky-inner-wrapper section {
-    display: flex !important;
-    flex-direction: column!important;
-    justify-content: center;
-  }
-  .head-count-container {
-    display: flex!important;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline!important;
-    margin: 0px;
-  }
-  .custom-basket-heading{
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 32px;
-  }
-  .custom-basket-count {
-    margin-left: 48px!important;margin-bottom: 0px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 24px;
-  }
   .sticky-inner-wrapper section div div {
     width: 44px;
     height: 44px;
@@ -491,15 +445,28 @@ header{
   .sticky-inner-wrapper{
     margin:0px!important;
   }
+  .sticky-inner-wrapper section {
+    display: flex !important;
+    flex-direction: column!important;
+    justify-content: center;
+    padding-bottom: 0px;
+  }
+  .head-count-container {
+    display: flex!important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline!important;
+    margin: 0px;
+  }
   .custom-basket-heading{
     font-weight: 800;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 32px;
   }
   .custom-basket-count {
-    margin-left: 48px!important;margin-bottom: 0px;
+    margin-left: 48px!important;
     font-weight: 500;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 24px;
   }
   .custom-continue-link{
@@ -526,15 +493,12 @@ header{
   .sticky-inner-wrapper{
     margin:0px!important;
   }
-  .custom-basket-heading{
-    font-weight: 800;
-    font-size: 15px;
-    line-height: 32px;
+
+  .head-count-container{
+    width: 100%;
+    margin:0px;
   }
-  .custom-basket-count {
-    margin-left: 48px!important;margin-bottom: 0px;
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 24px;
+  .custom-basket-count{
+    margin:0px!important;
   }
 }
