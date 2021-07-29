@@ -136,7 +136,6 @@
     }
 
     function filterToggleList(ul) {
-        console.log('working');
         if (document.querySelector('.MuiPaper-root').innerHTML.toLowerCase().indexOf('>spiciness<') > -1) {
             ul.querySelectorAll('li').forEach(function (li) {
                 var text = li.innerText.toLowerCase().trim();
@@ -150,7 +149,6 @@
     }
 
     function filterMenuChanges(ul) {
-        console.log('asdf');
         var filterObserver = new MutationObserver(function () {
             filterToggleList(ul);
         });
@@ -169,13 +167,22 @@
     }
 
     function ctaTextChange(cta) {
-            var count = cta.querySelector('p');
-            if (count) {
-                count.textContent = count.textContent.replace(/\D/g, "");
-            }
+        var count = cta.querySelector('p');
+        if (count) {
+            count.textContent = count.textContent.replace(/\D/g, "");
+        } else {
+            waitUntil(function () {
+                return cta.querySelector('p');
+            }, function () {
+                var count = cta.querySelector('p');
+                if (count) {
+                    count.textContent = count.textContent.replace(/\D/g, "");
+                }
+            });
         }
+    }
 
-    function recipeCtaChanges(cta) {
+    function recipeCtaChanges() {
         document.querySelectorAll('.card-body > div:last-child').forEach(function (cta) {
             var ctaObject = {
                 attributes: true,
@@ -192,11 +199,16 @@
     function removePopup(){
         if (document.querySelector('.MuiPaper-root>div>span') && document.querySelector('.MuiPaper-root>div>span').innerText === "Your first box") {
             document.body.classList.remove("custom-popup-show");
-            console.log('remove show');
+            document.querySelector('button.MuiButtonBase-root.MuiIconButton-root').click();
         }
         else {
-            document.body.classList.add("custom-popup-show");
-            console.log('add show');
+            var waitForModal=setInterval(function () {
+                if(document.querySelector('.MuiDrawer-root .MuiDrawer-modal')){
+                    clearInterval(waitForModal);
+                    document.querySelector('.MuiDrawer-root .MuiDrawer-modal').classList.add("custom-popup-show");
+                    document.querySelector('button.MuiButtonBase-root.MuiIconButton-root').click();
+                }
+            },50);
         }
     }
     
