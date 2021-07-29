@@ -15,7 +15,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 }
 
 .container-fluid {
-  background-color: #f2f2f2;
+  background-color: #f8f8f8;
   margin: auto;
   padding: auto !important;
 }
@@ -82,7 +82,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 .card-body {
   display: flex;
   justify-content: space-between;
-  background-color: #f2f2f2;
+  background-color: #f8f8f8;
   min-height: 0px !important;
   padding-right: 0px;
   padding-left: 0px;
@@ -217,20 +217,6 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
   margin: 0px !important;
 }
 
-.card-body {
-  display: flex;
-  justify-content: space-between;
-  background-color: #f2f2f2;
-  min-height: 0px !important;
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
-}
-
-.card-body > p {
-  display: auto;
-}
-
 .custom-veg-label{
   display: block!important;
   position: relative;
@@ -242,17 +228,6 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
   bottom: -34px;
   left: 0px;
 }
-
-.card-body > div:nth-last-child(1) {
-  margin-top: 0px !important;
-  width: 110px;
-  height: 45px;
-}
-
-.card-body > div:nth-last-child(1) + div {
-  display: none;
-}
-
 
 .card-title {
   font-size: 16px;
@@ -273,7 +248,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
   border: none!important;
   width: auto;
   float: right;
-  background-color: #f2f2f2;
+  background-color: #f8f8f8;
   text-decoration: underline;
   margin-top: 7px;
   margin-bottom: 0px!important;
@@ -315,21 +290,6 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
   height: 72px;
   margin: 0px!important;
   padding: 0px;
-}
-
-.custom-recipe-filter-link {
-  border: none!important;
-  width: auto;
-  float: right;
-  background-color: #f2f2f2;
-  text-decoration: underline;
-  margin-top: 7px;
-  margin-bottom: 27px;
-  margin-right: 41px;
-  padding: 12px 24px!important;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
 }
 
 .container-fluid > div.d-flex {
@@ -376,7 +336,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
     width: auto;
     float: left;
     margin-left: 0px;
-    background-color: #f2f2f2;
+    background-color: #f8f8f8;
     text-decoration: underline;
     margin-bottom: 27px;
     padding: 0px!important;
