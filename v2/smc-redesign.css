@@ -8,6 +8,11 @@ header+.container-fluid>div:nth-of-type(3){
 header+.container-fluid+section div:nth-of-type(2){
   margin: 0px 0px !important;
 }
+header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:nth-of-type(2) div{
+  margin-left: 5px;
+  border: 1px dashed #AAAAAA;
+  border-radius: 10px;
+}
 
 .container-fluid {
   background-color: #f2f2f2;
@@ -129,7 +134,7 @@ header+.container-fluid+section div:nth-of-type(2){
   flex-direction: column;
   justify-content: flex-end;
   justify-content: baseline;
-  margin-right:48px;
+  margin-right:48px!important;
   align-items: normal!important;
 }
 .custom-basket-heading {
@@ -381,18 +386,11 @@ header+.container-fluid+section div:nth-of-type(2){
     padding: 0px 22px;
   }
 
-  .sticky-inner-wrapper section div div {
-    width: 44px;
-    height: 44px;
-    margin: 3px;
-    min-width: 44px;
-  }
-    
   .sticky-inner-wrapper > section > div button {
     background-color: #d4d4d4;
     border: none;
     color: white;
-    width: 180px;
+    width: 123px;
     height: 45px;
     margin-left:14.85px!important;
   }
@@ -421,7 +419,7 @@ header+.container-fluid+section div:nth-of-type(2){
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline!important;
-    margin: 0px;
+    margin: 0px!important;
   }
   .custom-basket-heading{
     font-weight: 800;
@@ -433,6 +431,7 @@ header+.container-fluid+section div:nth-of-type(2){
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;
+    margin-right: 0px !important;
   }
   .sticky-inner-wrapper > section > div button {
     background-color: #d4d4d4;
@@ -445,6 +444,11 @@ header+.container-fluid+section div:nth-of-type(2){
 }
 
 @media (max-width: 375px) {
+  header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:nth-of-type(2) div{
+    margin-left: 2px;
+    border: 1px dashed #AAAAAA;
+    border-radius: 10px;
+  }  
   .container-fluid section div.row > div.flex  {
     grid-template-columns: 1fr;
     padding: 0px 11px;
@@ -462,7 +466,7 @@ header+.container-fluid+section div:nth-of-type(2){
   }
   .head-count-container{
     width: 100%;
-    margin:0px;
+    margin:0px!important;
   }
   .custom-basket-count{
     margin:0px!important;
