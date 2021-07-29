@@ -2,6 +2,18 @@ header{
   display: none!important;
 }
 
+header+.container-fluid>div:nth-of-type(3){
+  margin:0px;
+}
+header+.container-fluid+section div:nth-of-type(2){
+  margin: 0px 0px !important;
+}
+header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:nth-of-type(2) div{
+  margin-left: 5px;
+  border: 1px dashed #AAAAAA;
+  border-radius: 10px;
+}
+
 .container-fluid {
   background-color: #f2f2f2;
   margin: auto;
@@ -20,19 +32,10 @@ header{
   display: none;
 }
 
-.sticky-inner-wrapper section div div {
-  width: 78px;
-  height: 78px;
-  min-width: 78px;
-  border: 1px dashed #bcb6b6;
-  background-color: #f2f2f2;
-  border-radius: 10px;
-  margin: 3px;
-}
-
 .sticky-inner-wrapper > section > div {
   display: flex;
   align-items: center;
+  margin:0px;
 }
  
 .sticky-inner-wrapper section {
@@ -40,13 +43,10 @@ header{
   justify-content: center;
 }
 
-.sticky-inner-wrapper > section div:nth-of-type(2) {
-  margin: 5px;
-}
 .sticky-inner-wrapper > section > div button > svg {
   display: none;
  }
- 
+
 .container-fluid section {
   box-shadow: none;
 }
@@ -127,7 +127,7 @@ header{
   flex-direction: column;
   justify-content: flex-end;
   justify-content: baseline;
-  margin-right: 48px;
+  margin-right: 48px!important;
   align-items: normal!important;
 }
 .custom-basket-heading {
@@ -183,27 +183,6 @@ header{
   display: none;
 }
 
-.sticky-inner-wrapper > section > div:nth-of-type(2)>p {
-  display: none;
-}
-
-.sticky-inner-wrapper > section > div {
-  display: flex;
-  align-items: center;
-}
- 
-.sticky-inner-wrapper section {
-  display: flex !important;
-  justify-content: center;
-}
-
-.sticky-inner-wrapper > section div:nth-of-type(2) {
-  margin: 5px;
-}
-.sticky-inner-wrapper > section > div button>svg {
-  display: none;
- }
- 
 .container-fluid section {
   box-shadow: none;
 }
@@ -321,10 +300,6 @@ header{
 .container-fluid div:nth-of-type(3)>button.flex-center {
   display: none;
 }
-.container-fluid div:nth-of-type(3) {
-  padding: 0px;
-  margin: 0px;
-}
 
 .custom-recipe-filter-link-container {
   width: 100%!important;
@@ -333,9 +308,7 @@ header{
 .container-fluid div:nth-of-type(3)>div.flex {
   display: none!important;
 }
-.container-fluid div:nth-of-type(4) {
-  margin-top: 0px;
-}
+
 .custom-recipe-filter-link-container {
   width: 100%!important;
   height: 72px;
@@ -405,13 +378,6 @@ header{
     grid-template-columns: 1fr 1fr;
     padding: 0px 22px;
   }
-  .sticky-inner-wrapper section div div {
-    width: 44px;
-    height: 44px;
-    margin: 3px;
-    min-width: 44px;
-  }
-    
   .custom-continue-link {
     background-color: #d4d4d4;
     border: none;
@@ -451,7 +417,7 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline!important;
-    margin: 0px;
+    margin: 0px!important;
   }
   .custom-basket-heading{
     font-weight: 800;
@@ -463,6 +429,7 @@ header{
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;
+    margin-right: 0px !important;
   }
   .custom-continue-link{
     background-color: #d4d4d4;
@@ -481,6 +448,11 @@ header{
 }
 
 @media (max-width: 375px) {
+  header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:nth-of-type(2) div{
+    margin-left: 2px;
+    border: 1px dashed #AAAAAA;
+    border-radius: 10px;
+  }  
   .container-fluid section div.row > div.flex {
     grid-template-columns: 1fr;
     padding: 0px 11px;
@@ -491,9 +463,11 @@ header{
 
   .head-count-container{
     width: 100%;
-    margin:0px;
+    margin-right:0px!important;
   }
   .custom-basket-count{
     margin:0px!important;
+    margin-right:0px!important;
+
   }
 }
