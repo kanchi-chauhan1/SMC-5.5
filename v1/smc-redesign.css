@@ -165,17 +165,18 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
   bottom: auto;
   font-size: 14px;
   line-height: 17px;
+  font-weight: bold;
   background-color: #d4d4d4;
   text-decoration: none!important;
   color: white!important;
   border: none;
   color: white;
-  width: 125px;
+  width: 180px;
   height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 20px;
   margin:5px;
 }
 
@@ -336,7 +337,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 }
 
 .card-body div:nth-last-child(1) {
-  width: 110px;
+  width: 120px;
   height: 45px;
 }
 
@@ -354,6 +355,9 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 }
 
 @media (max-width: 1439px) {
+  .container-fluid section div.row > div.flex{
+    padding-bottom:40px!important;
+  }
   .container-fluid section div.row > div.flex {
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0px 44px;
@@ -361,6 +365,9 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 }
 
 @media (max-width: 1023px) {
+  .container-fluid section div.row > div.flex{
+    padding-bottom:40px!important;
+  }
   .custom-recipe-filter-link {
     border: none!important;
     width: auto;
@@ -382,15 +389,16 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
     background-color: #d4d4d4;
     border: none;
     color: white;
-    width: 120px;
+    width: 125px;
     height: 45px;
+    font-weight: bold;
     margin-left:14.85px!important;
     text-decoration: none!important;
     color: white!important;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 20px;
   }
    
   .sticky-inner-wrapper > section > div button > svg {
@@ -399,6 +407,9 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 }
 
 @media (max-width: 766px) {
+  .container-fluid section div.row > div.flex{
+    padding-bottom:40px!important;
+  }
   .container-fluid section div.row > div.flex {
     grid-template-columns: 1fr;
     padding: 0px 11px;
@@ -431,23 +442,13 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
     line-height: 24px;
     margin-right: 0px !important;
   }
-  .custom-continue-link{
-    background-color: #d4d4d4;
-    border: none;
-    color: white;
-    width: 100px;
-    height: 45px;
-    margin-left:5.85px!important;
-    text-decoration: none!important;
-    color: white!important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-  }
+  
 }
 
 @media (max-width: 375px) {
+  .container-fluid section div.row > div.flex{
+    padding-bottom:40px!important;
+  }
   header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:nth-of-type(2) div{
     margin-left: 2px;
     border: 1px dashed #AAAAAA;
