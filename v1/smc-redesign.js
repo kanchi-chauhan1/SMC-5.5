@@ -245,7 +245,8 @@
     window.optiReady('.card-body div:last-child > div > div', function () {
         productrecipeCtaChanges();
     });
-    window.optiReady('.sticky-inner-wrapper', function () {
+    window.optiReady('.container-fluid > .sticky-outer-wrapper', function () {
+        console.log('executing init');
         init();
     });
 }());

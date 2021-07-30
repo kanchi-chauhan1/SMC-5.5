@@ -49,7 +49,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 
 .sticky-outer-wrapper>.sticky-inner-wrapper>section>a {
   position: absolute;
-  left: 50px;
+  left: 32px;
 }
 .sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center{
   pointer-events: none!important;
@@ -188,7 +188,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  margin:5px;
+  margin-left:8px;
 }
 
 .MuiPaper-root div:nth-of-type(2) ul:nth-of-type(3) {
@@ -197,6 +197,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 
 .container-fluid section {
   box-shadow: none;
+  margin-top:0px!important;
 }
 
 .container-fluid section div.row > div.flex {
@@ -366,7 +367,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
     width: 125px;
     height: 45px;
     font-weight: bold;
-    margin-left:14.85px!important;
+    margin-left:4px!important;
     text-decoration: none!important;
     color: white!important;
     display: flex;
@@ -381,6 +382,10 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 }
 
 @media (max-width: 766px) {
+  .sticky-outer-wrapper>.sticky-inner-wrapper>section>a{
+    position: absolute;
+    left:14px;
+  }
   .container-fluid section div.row > div.flex{
     padding-bottom:40px!important;
   }
@@ -388,6 +393,17 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
     grid-template-columns: 1fr;
     padding: 0px 11px;
   }
+  header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:nth-of-type(2) div{
+    border: 1px dashed #AAAAAA;
+    border-radius: 10px;
+    width: 45px;
+    height:45px;
+  }  
+  header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:nth-of-type(2) img{
+    border-radius: 10px;
+    width: 45px;
+    height:45px;
+  }  
   .sticky-inner-wrapper{
     margin:0px!important;
   }
@@ -422,11 +438,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
   .container-fluid section div.row > div.flex{
     padding-bottom:40px!important;
   }
-  header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:nth-of-type(2) div{
-    margin-left: 2px;
-    border: 1px dashed #AAAAAA;
-    border-radius: 10px;
-  }  
+
   .container-fluid section div.row > div.flex {
     grid-template-columns: 1fr;
     padding: 0px 11px;
