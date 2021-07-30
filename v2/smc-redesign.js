@@ -141,11 +141,11 @@
     }
 
     function veganLabel(label) {
-        // document.querySelectorAll('.card-body div .card-text').forEach(function (label) {
-            if (label.textContent.trim().toLowerCase() === "vegan" || label.textContent.trim().toLowerCase() === "vegetarian") {
-                label.classList.add("custom-veg-label");
-            }
-        //  });
+        document.querySelectorAll('.card-body div .card-text').forEach(function (label) {
+           if (label.textContent.trim().toLowerCase() === "vegan" || label.textContent.trim().toLowerCase() === "vegetarian") {
+               label.classList.add("custom-veg-label");
+           }
+        });
     }
 
     function ctaTextChange(cta) {
@@ -201,11 +201,11 @@
     window.optiReady('.MuiPaper-root div ul', function (ele) {
         filterMenuChanges(ele);
     });
-    window.optiReady('.card-body > div:last-child', function (ele) {
-        veganLabel(ele);
-    });
-    window.optiReady('.card-body > div:last-child', function () {
+    window.optiReady('header + .container-fluid > section:nth-of-type(1) .card:first-child .card-body', function () {
+        veganLabel();
         recipeCtaChanges();
+    });
+    window.optiReady('.card-body div:last-child > div > div', function () {
         productrecipeCtaChanges();
     });
     window.optiReady('.sticky-inner-wrapper', function () {
