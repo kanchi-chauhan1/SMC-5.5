@@ -47,6 +47,15 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
   display: none;
  }
 
+.sticky-outer-wrapper>.sticky-inner-wrapper>section>a {
+  position: absolute;
+  left: 50px;
+}
+
+.sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center>div{
+  border:1px dashed #AAAAAA;
+}
+
 .container-fluid section {
   box-shadow: none;
 }
