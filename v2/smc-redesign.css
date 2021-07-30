@@ -306,7 +306,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 
 .card div.card-body > a > div {
   width: 176px;
-  height: 45px!important;
+  height: auto!important;
 }
 
 .m2g_6pmcU div {

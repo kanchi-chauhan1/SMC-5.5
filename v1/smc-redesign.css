@@ -2,7 +2,7 @@ header{
   display: none!important;
 }
 
-header+.container-fluid>div:nth-of-type(3){
+header + .container-fluid>div:nth-of-type(3){
   margin:0px;
 }
 header+.container-fluid+section div:nth-of-type(2){
@@ -51,7 +51,9 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
   position: absolute;
   left: 50px;
 }
-
+.sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center{
+  pointer-events: none!important;
+}
 .sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center>div{
   border:1px dashed #AAAAAA;
 }
@@ -312,7 +314,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 
 .card div.card-body > a > div {
   width: 176px;
-  height: 45px!important;
+  height: auto!important;
 }
 
 .m2g_6pmcU div {

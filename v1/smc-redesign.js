@@ -111,9 +111,9 @@
     }
 
     function continueLink() {
-        // if (document.querySelector('.custom-continue-link')) {
-        //     document.querySelector('.custom-continue-link').remove();
-        // }
+        if (document.querySelector('.custom-continue-link')) {
+            document.querySelector('.custom-continue-link').remove();
+        }
         var targetNode = document.querySelector('.sticky-inner-wrapper > section > div:nth-of-type(2) > p');
         targetNode.insertAdjacentHTML('beforebegin','<a href="https://www.simplycook.com/recipes/checkout-multi-step/summary" class="custom-continue-link">Continue</a>');
         document.querySelector('.custom-continue-link').addEventListener('click', function (event) {
@@ -125,9 +125,9 @@
     }
 
     function filterLinkChanges() {
-        // if (document.querySelector('.custom-recipe-filter-link-container')) {
-        //     document.querySelector('.custom-recipe-filter-link-container').remove();
-        // }
+        if (document.querySelector('.custom-recipe-filter-link-container')) {
+            document.querySelector('.custom-recipe-filter-link-container').remove();
+        }
         var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
         document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
         document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 
@@ -196,6 +196,20 @@
         });
     }
 
+    function productrecipeCtaChanges() {
+        document.querySelectorAll('.card-body div:last-child > div > div').forEach(function (cta) {
+            var ctaObject = {
+                attributes: true,
+                subtree: true
+            };
+            var CtaObserver = new MutationObserver(function () {
+                ctaTextChange(cta);
+            });
+            CtaObserver.observe(cta, ctaObject);
+            ctaTextChange(cta);
+        });
+    }
+
     function removePopup(){
         if (document.querySelector('.MuiPaper-root>div>span') && document.querySelector('.MuiPaper-root>div>span').innerText === "Your first box") {
             document.body.classList.remove("custom-popup-show");
@@ -218,11 +232,6 @@
         filterLinkChanges();
     }
 
-    waitUntil(function () {
-        return document.querySelectorAll('.card-body > div:last-child').length > 0 && document.querySelectorAll('.card-body > div .card-text').length>0;
-    }, function () {
-        init();
-    });
     window.optiReady('.MuiDrawer-root', function () {
         removePopup();
     });
@@ -232,5 +241,11 @@
     window.optiReady('header + .container-fluid > section:nth-of-type(1) .card:first-child .card-body', function () {
         recipeCtaChanges();
         veganLabel();
+    });
+    window.optiReady('.card-body div:last-child > div > div', function () {
+        productrecipeCtaChanges();
+    });
+    window.optiReady('.sticky-inner-wrapper', function () {
+        init();
     });
 }());

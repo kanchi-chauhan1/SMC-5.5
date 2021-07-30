@@ -155,8 +155,8 @@
         }
     }
 
-function recipeCtaChanges(cta) {
-    // document.querySelectorAll('.card-body > div:last-child').forEach(function (cta) {
+    function recipeCtaChanges() {
+    document.querySelectorAll('.card-body > div:last-child').forEach(function (cta) {
         var ctaObject = {
             attributes: true,
             subtree: true,
@@ -167,8 +167,22 @@ function recipeCtaChanges(cta) {
         });
         CtaObserver.observe(cta, ctaObject);
         ctaTextChange(cta);
-    // });
-}
+    });
+    }
+
+    function productrecipeCtaChanges() {
+        document.querySelectorAll('.card-body div:last-child > div > div').forEach(function (cta) {
+            var ctaObject = {
+                attributes: true,
+                subtree: true
+            };
+            var CtaObserver = new MutationObserver(function () {
+                ctaTextChange(cta);
+            });
+            CtaObserver.observe(cta, ctaObject);
+            ctaTextChange(cta);
+        });
+    }
 
     function addCartHeading() {
         var targetnode=document.querySelector('.MuiPaper-root>div>span');
@@ -181,13 +195,6 @@ function recipeCtaChanges(cta) {
         filterLinkChanges();
     }
 
-    waitUntil(function () {
-        return  document.querySelectorAll('.card-body > div:last-child').length > 0
-            && document.querySelectorAll('.card-body div .card-text').length > 0
-    }, function () {
-        init();
-    });
-    
     window.optiReady('.MuiDrawer-root', function () {
         addCartHeading();
     });
@@ -197,7 +204,11 @@ function recipeCtaChanges(cta) {
     window.optiReady('.card-body > div:last-child', function (ele) {
         veganLabel(ele);
     });
-    window.optiReady('.card-body > div:last-child', function (ele) {
-        recipeCtaChanges(ele);
+    window.optiReady('.card-body > div:last-child', function () {
+        recipeCtaChanges();
+        productrecipeCtaChanges();
+    });
+    window.optiReady('.sticky-inner-wrapper', function () {
+        init();    
     });
 }());
