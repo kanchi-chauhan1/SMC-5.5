@@ -62,7 +62,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 
 .sticky-outer-wrapper>.sticky-inner-wrapper>section>a {
   position: absolute;
-  left: 50px;
+  left: 32px;
 }
 
 .sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center>div{
@@ -71,6 +71,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 
 .container-fluid section {
   box-shadow: none;
+  margin-top: 0px!important;
 }
 
 .container-fluid section div.row > div.flex {
@@ -354,20 +355,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
     font-size: 14px;
     line-height: 24px;
   }
-  .custom-continue-link {
-    background-color: #d4d4d4;
-    border: none;
-    color: white;
-    width: 120px;
-    height: 45px;
-    margin-left:14.85px!important;
-    text-decoration: none!important;
-    color: white!important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-  }
+
   .container-fluid section div.row > div.flex {
     grid-template-columns: 1fr 1fr;
     padding: 0px 22px;
@@ -379,7 +367,7 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
     color: white;
     width: 125px;
     height: 45px;
-    margin-left:12.85px!important;
+    margin-left:2px!important;
   }
    
   .sticky-inner-wrapper > section > div button > svg {
@@ -388,6 +376,21 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 }
 
 @media (max-width: 766px) {
+  .sticky-outer-wrapper>.sticky-inner-wrapper>section>a {
+    position: absolute;
+    left: 14px;
+  }
+  header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:nth-of-type(2) div{
+    border: 1px dashed #AAAAAA;
+    border-radius: 10px;
+    width: 45px!important;
+    height:45px!important;
+  }  
+  header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:nth-of-type(2) img{
+    border-radius: 10px;
+    width: 45px!important;
+    height:45px!important;
+  }  
   .container-fluid section div.row > div.flex{
     padding-bottom:40px!important;
   }
@@ -426,14 +429,17 @@ header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:
 }
 
 @media (max-width: 375px) {
+  .sticky-inner-wrapper > section > div button {
+    background-color: #d4d4d4;
+    border: none;
+    color: white;
+    width: 125px!important;
+    height: 45px;
+    margin-left:2px!important;
+  }
   .container-fluid section div.row > div.flex{
     padding-bottom:40px!important;
   }
-  header+.container-fluid>.sticky-outer-wrapper>.sticky-inner-wrapper>section div:nth-of-type(2) div{
-    margin-left: 2px;
-    border: 1px dashed #AAAAAA;
-    border-radius: 10px;
-  }  
   .container-fluid section div.row > div.flex  {
     grid-template-columns: 1fr;
     padding: 0px 11px;
