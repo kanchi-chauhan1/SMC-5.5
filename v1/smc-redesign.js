@@ -169,9 +169,16 @@
     function ctaTextChange(ctaWrapper) {
         var count = ctaWrapper.querySelector('p');
         var btn = ctaWrapper.querySelector('.btn.disabled:first-child');
-        if (btn && btn.innerText === "Add - (box full)"){
-            btn.textContent="Add";
-        }
+            waitUntil(function () {
+                return [].filter.call(document.querySelectorAll('.card-body > div:last-child p'), function (para) {
+                    return para.innerText.toLowerCase().indexOf('adding') >= 0;
+                }).length === 0;
+            }, function () {
+                if (btn && btn.innerText !== "") {
+                    console.log('add1 ', btn.innerText);
+                    btn.innerText = "Add";
+                }
+            });
         if (count) {
             count.textContent = count.textContent.replace(/\D/g, "");
         } else {
