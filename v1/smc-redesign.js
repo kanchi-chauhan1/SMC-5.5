@@ -232,6 +232,18 @@
         filterLinkChanges();
     }
 
+    window.addEventListener('load', function () {
+        [].forEach.call(document.querySelectorAll('.card'), function(e) {
+            e.addEventListener('click', function() {
+                Kameleoon.API.Goals.processConversion(239188)
+            });
+       });
+       [].forEach.call(document.querySelectorAll('[data-testid="Add recipe"]'), function(e) {
+            e.addEventListener('click', function() {
+                Kameleoon.API.Goals.processConversion(239191)
+        });
+   });
+    })
     window.optiReady('.MuiDrawer-root', function () {
         removePopup();
     });
