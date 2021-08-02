@@ -269,7 +269,6 @@
         productrecipeCtaChanges();
     });
     window.optiReady('.container-fluid > .sticky-outer-wrapper', function () {
-        console.log('executing init');
         init();
     });
 }());
