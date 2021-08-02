@@ -139,7 +139,7 @@
         if (document.querySelector('.MuiPaper-root').innerHTML.toLowerCase().indexOf('>spiciness<') > -1) {
             ul.querySelectorAll('li').forEach(function (li) {
                 var text = li.innerText.toLowerCase().trim();
-                if (text !== 'spiciness' && text !== 'dietary requirements' && text !== 'allergens') {
+                if (text.indexOf('spiciness') < 0  && text.indexOf('dietary requirements')  < 0 && text.indexOf('allergens') < 0) {
                     li.classList.add('custom-filter-li-hide');
                 } else {
                     li.classList.remove('custom-filter-li-hide');
@@ -166,15 +166,19 @@
         });
     }
 
-    function ctaTextChange(cta) {
-        var count = cta.querySelector('p');
+    function ctaTextChange(ctaWrapper) {
+        var count = ctaWrapper.querySelector('p');
+        var btn = ctaWrapper.querySelector('.btn.disabled:first-child');
+        if (btn && btn.innerText === "Add - (box full)"){
+            btn.textContent="Add";
+        }
         if (count) {
             count.textContent = count.textContent.replace(/\D/g, "");
         } else {
             waitUntil(function () {
-                return cta.querySelector('p');
+                return ctaWrapper.querySelector('p');
             }, function () {
-                var count = cta.querySelector('p');
+                var count = ctaWrapper.querySelector('p');
                 if (count) {
                     count.textContent = count.textContent.replace(/\D/g, "");
                 }
