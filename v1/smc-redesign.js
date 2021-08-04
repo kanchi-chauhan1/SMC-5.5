@@ -73,8 +73,6 @@
 
     })(this);
 
-
-
     function miniBasketChanges() {
         if (document.querySelector('.head-count-container')) {
             document.querySelector('.head-count-container').remove();
@@ -131,7 +129,7 @@
         var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
         document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
         document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 
-            document.querySelector('header + .container-fluid div:nth-of-type(3) button:nth-of-type(1)').click(); 
+            document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)').click(); 
         });
     }
 
@@ -174,7 +172,7 @@
                     return para.innerText.toLowerCase().indexOf('adding') >= 0;
                 }).length === 0;
             }, function () {
-                if (btn && btn.innerText !== "") {
+                if (btn && btn.innerText !== "" && btn.innerText !== "Add"){
                     console.log('add1 ', btn.innerText);
                     btn.innerText = "Add";
                 }
