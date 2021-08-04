@@ -10,7 +10,7 @@ header + .container-fluid + section div:nth-of-type(2){
 }
 header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > section div:nth-of-type(2) div{
   margin-left: 5px;
-  border: 1px dashed #AAAAAA;
+  border: 2px dashed #AAAAAA;
   border-radius: 10px;
 }
 .custom-recipe-filter-link-container ~ div {
@@ -65,10 +65,6 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 .sticky-outer-wrapper>.sticky-inner-wrapper>section>a {
   position: absolute;
   left: 32px;
-}
-
-.sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center>div{
-  border:1px dashed #AAAAAA;
 }
 
 .container-fluid section {
