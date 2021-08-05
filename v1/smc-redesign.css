@@ -4,6 +4,7 @@ header{
 
 header + .container-fluid > div:nth-of-type(3){
   margin:0px;
+  display: none!important;
 }
 
 header + .container-fluid + section div:nth-of-type(2){
@@ -14,6 +15,10 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   margin-left: 5px;
   border: 2px dashed #AAAAAA;
   border-radius: 10px;
+}
+
+header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1) {
+  display: none;
 }
 
 .custom-recipe-filter-link-container ~ div {
@@ -33,10 +38,6 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   margin-bottom: 20px;
 }
 
-.sticky-inner-wrapper > section > div button {
-  display: none;
-}
-
 .sticky-inner-wrapper > section > div:nth-of-type(2) > p {
   display: none;
 }
@@ -52,6 +53,9 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   justify-content: center;
 }
 
+.sticky-inner-wrapper > section > div button {
+  display: none;
+}
 .sticky-inner-wrapper > section > div button > svg {
   display: none;
  }
@@ -274,10 +278,9 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   float: right;
   background-color: #f8f8f8;
   text-decoration: underline;
-  margin-top: 7px;
-  margin-bottom: 0px!important;
+  margin-top:27px;
+  margin-bottom: 27px;
   margin-right: 41px;
-  padding: 12px 24px!important;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -307,7 +310,6 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 
 .custom-recipe-filter-link-container {
   width: 100%!important;
-  height: 72px;
   margin: -20px 0 0 !important;
   padding: 0px;
 }
@@ -356,9 +358,10 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
     width: auto;
     float: left;
     margin-left: 0px;
+    margin-top: 18px;
+    margin-bottom: 21px;
     background-color: #f8f8f8;
     text-decoration: underline;
-    margin-bottom: 27px;
     padding: 0px!important;
     font-weight: 500;
     font-size: 14px;
@@ -454,6 +457,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   .sticky-inner-wrapper{
     margin:0px!important;
   }
+  
   .head-count-container{
     width: 100%;
     margin-right:0px!important;

@@ -13,6 +13,11 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   border: 2px dashed #AAAAAA;
   border-radius: 10px;
 }
+
+header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1){
+  display: none;
+}
+
 .custom-recipe-filter-link-container ~ div {
   display: none!important;
 }
@@ -283,10 +288,9 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   float: right;
   background-color: #f8f8f8;
   text-decoration: underline;
-  margin-top: 7px;
+  margin-top: 27px;
   margin-bottom: 27px;
   margin-right: 41px;
-  padding: 12px 24px!important;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -349,9 +353,10 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
     width: auto;
     float: left;
     margin-left: 0px;
+    margin-top: 18px;
+    margin-bottom: 21px;
     background-color: #f8f8f8;
     text-decoration: underline;
-    margin-bottom: 27px;
     padding: 0px!important;
     font-weight: 500;
     font-size: 14px;

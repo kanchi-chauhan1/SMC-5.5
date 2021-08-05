@@ -110,11 +110,13 @@
         if (document.querySelector('.custom-recipe-filter-link-container')) {
             document.querySelector('.custom-recipe-filter-link-container').remove();
         }
-        var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
-        document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
-        document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () {
+        if (document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)')) {
+            var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
+            document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
+            document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 
             document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)').click(); 
         });
+        }
     }
 
     function filterToggleList(ul) {
@@ -180,7 +182,6 @@
         var ctaObject = {
             attributes: true,
             subtree: true,
-            childList: true
         };
         var CtaObserver = new MutationObserver(function () {
             ctaTextChange(cta);
@@ -188,20 +189,6 @@
         CtaObserver.observe(cta, ctaObject);
         ctaTextChange(cta);
     });
-    }
-
-    function productrecipeCtaChanges() {
-        document.querySelectorAll('.card-body div:last-child > div > div').forEach(function (cta) {
-            var ctaObject = {
-                attributes: true,
-                subtree: true
-            };
-            var CtaObserver = new MutationObserver(function () {
-                ctaTextChange(cta);
-            });
-            CtaObserver.observe(cta, ctaObject);
-            ctaTextChange(cta);
-        });
     }
 
     function addCartHeading() {
@@ -232,12 +219,9 @@
     window.optiReady('.MuiPaper-root div ul', function (ele) {
         filterMenuChanges(ele);
     });
-    window.optiReady('header + .container-fluid > section:nth-of-type(1) .card:first-child .card-body', function () {
-        veganLabel();
+    window.optiReady('.container-fluid > section:nth-of-type(1) .card:first-child .card-body', function () {
         recipeCtaChanges();
-    });
-    window.optiReady('.card-body div:last-child > div > div', function () {
-        productrecipeCtaChanges();
+        veganLabel();
     });
     window.optiReady('.container-fluid > .sticky-outer-wrapper', function () {
         init();    

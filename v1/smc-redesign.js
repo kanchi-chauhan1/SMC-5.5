@@ -167,12 +167,9 @@
     }
 
     function ctaTextChange(ctaWrapper) {
+    	console.log('XYZZZZ');
         var count = ctaWrapper.querySelector('p');
         var btn = ctaWrapper.querySelector('.btn.disabled:first-child');
-        if (btn && btn.innerText !== "" && btn.innerText !== "Add"){
-            console.log('add1 ', btn.innerText);
-            btn.innerText = "Add";
-        }
         waitUntil(function () {
             return [].filter.call(document.querySelectorAll('.card-body > div:last-child p'), function (para) {
                 return para.innerText.toLowerCase().indexOf('adding') >= 0;
@@ -199,20 +196,6 @@
 
     function recipeCtaChanges() {
         document.querySelectorAll('.card-body > div:last-child').forEach(function (cta) {
-            var ctaObject = {
-                attributes: true,
-                subtree: true
-            };
-            var CtaObserver = new MutationObserver(function () {
-                ctaTextChange(cta);
-            });
-            CtaObserver.observe(cta, ctaObject);
-            ctaTextChange(cta);
-        });
-    }
-
-    function productrecipeCtaChanges() {
-        document.querySelectorAll('.card-body div:last-child > div > div').forEach(function (cta) {
             var ctaObject = {
                 attributes: true,
                 subtree: true
@@ -265,12 +248,9 @@
     window.optiReady('.MuiPaper-root div ul', function (ele) {
         filterMenuChanges(ele);
     });
-    window.optiReady('header + .container-fluid > section:nth-of-type(1) .card:first-child .card-body', function () {
+    window.optiReady('.container-fluid > section:nth-of-type(1) > .row > div:first-child .card:first-child .card-body', function () {
         recipeCtaChanges();
         veganLabel();
-    });
-    window.optiReady('.card-body div:last-child > div > div', function () {
-        productrecipeCtaChanges();
     });
     window.optiReady('.container-fluid > .sticky-outer-wrapper', function () {
         init();
