@@ -29,6 +29,9 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 .container-fluid div:nth-of-type(3) > button.flex-center{
   display: none;
 }
+.sticky-outer-wrapper {
+  margin-bottom: 20px;
+}
 
 .sticky-inner-wrapper > section > div button {
   bottom: auto;
@@ -270,7 +273,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 .custom-recipe-filter-link-container {
   width: 100%!important;
   height: 72px;
-  margin: 0px!important;
+  margin: -20px 0 0 !important;
   padding: 0px;
 }
 
