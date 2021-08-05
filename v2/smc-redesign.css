@@ -205,7 +205,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 .custom-veg-label{
   display: block!important;
   position: relative;
-  top:34px;
+  top:0px;
 }
 
 .card-body > div:nth-of-type(1) {

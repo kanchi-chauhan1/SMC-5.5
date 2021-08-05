@@ -126,11 +126,13 @@
         if (document.querySelector('.custom-recipe-filter-link-container')) {
             document.querySelector('.custom-recipe-filter-link-container').remove();
         }
-        var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
-        document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
-        document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 
+        if (document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)')) {
+            var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
+            document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
+            document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 
             document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)').click(); 
         });
+        }
     }
 
     function filterToggleList(ul) {

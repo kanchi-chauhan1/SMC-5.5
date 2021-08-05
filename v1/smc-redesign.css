@@ -29,6 +29,9 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 .container-fluid > section > div {
   min-width: 100%;
 }
+.sticky-outer-wrapper {
+  margin-bottom: 20px;
+}
 
 .sticky-inner-wrapper > section > div button {
   display: none;
@@ -241,7 +244,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 .custom-veg-label{
   display: block!important;
   position: relative;
-  top:34px;
+  top:0px;
 }
 
 .card-body > div:nth-of-type(1) {
@@ -298,10 +301,6 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   display: none;
 }
 
-.custom-recipe-filter-link-container {
-  width: 100%!important;
-}
-
 .container-fluid div:nth-of-type(3)>div.flex {
   display: none!important;
 }
@@ -309,7 +308,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 .custom-recipe-filter-link-container {
   width: 100%!important;
   height: 72px;
-  margin: 0px!important;
+  margin: -20px 0 0 !important;
   padding: 0px;
 }
 
