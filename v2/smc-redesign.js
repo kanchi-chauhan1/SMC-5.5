@@ -106,19 +106,32 @@
         basketObserver.observe(targetNode, configObject);
     }
 
+    function filterLinkFunctionality() {
+        var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
+            document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
+            document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 
+            document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)').click();         
+        });
+    }
     function filterLinkChanges() {
         if (document.querySelector('.custom-recipe-filter-link-container')) {
             document.querySelector('.custom-recipe-filter-link-container').remove();
         }
         if (document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)')) {
-            var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
-            document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
-            document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 
-            document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)').click(); 
-        });
+            filterLinkFunctionality();
+        } else {
+            waitUntil( function () {
+                return document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)');
+            }, function () {
+                console.log('working');
+                if (document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)')) {
+                    console.log('inside if');
+                    filterLinkFunctionality();
+                }
+            });
         }
     }
-
+    
     function filterToggleList(ul) {
         if (document.querySelector('.MuiPaper-root').innerHTML.toLowerCase().indexOf('>spiciness<') > -1) {
             ul.querySelectorAll('li').forEach(function (li) {

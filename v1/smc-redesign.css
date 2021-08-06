@@ -51,6 +51,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   display: flex;
   align-items: center;
   margin:0px;
+  outline: none;
 }
  
 .sticky-inner-wrapper section {
@@ -115,7 +116,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   min-height: 0px !important;
   padding-right: 0px;
   padding-left: 0px;
-  padding-bottom: 30px;
+  padding-bottom: 30px!important;
 }
 
 .card-body > p {

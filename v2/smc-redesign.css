@@ -43,13 +43,13 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   margin-bottom: 20px;
 }
 
-.sticky-inner-wrapper > section > div button {
+.sticky-inner-wrapper > section > div button{
   bottom: auto;
   font-size: 14px;
   line-height: 17px;
   background-color: #d4d4d4;
   border: none;
-  color: white;
+  color: white!important;
   width: 180px;
   height: 45px;
   font-weight: bold;
@@ -64,8 +64,9 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   display: flex;
   align-items: center;
   margin: 0px;
+  outline: none;
 }
- 
+
 .sticky-inner-wrapper section {
   display: flex !important;
   justify-content: center;
@@ -118,7 +119,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   min-height: 0px !important;
   padding-right: 0px;
   padding-left: 0px;
-  padding-bottom: 30px;
+  padding-bottom: 30px!important;
 }
 
 .card-body > p {
