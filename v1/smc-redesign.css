@@ -21,6 +21,11 @@ header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1) {
   display: none;
 }
 
+header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > section div:nth-of-type(2) img{
+  margin-left: 5px;
+  border-radius: 10px;
+}
+
 .custom-recipe-filter-link-container ~ div {
   display: none!important;
 }
@@ -80,11 +85,9 @@ header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1) {
 .container-fluid section div.row > div.flex {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  row-gap: 40px;
   column-gap: 30px;
   padding: 0px 81px;
   min-width: 100% !important;
-  padding-bottom:40px;
 }
 
 .container-fluid > div:nth-of-type(2) {
@@ -112,7 +115,7 @@ header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1) {
   min-height: 0px !important;
   padding-right: 0px;
   padding-left: 0px;
-  padding-bottom: 0px;
+  padding-bottom: 30px;
 }
 
 .card-body > p {
@@ -214,17 +217,6 @@ header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1) {
 .container-fluid section {
   box-shadow: none;
   margin-top:0px!important;
-}
-
-.container-fluid section div.row > div.flex {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  overflow-x: unset!important;
-  row-gap: 40px;
-  column-gap: 30px;
-  padding: 0px 81px;
-  min-width: 100% !important;
-  padding-bottom:40px;
 }
 
 .container-fluid > div:nth-of-type(2) {
@@ -340,9 +332,7 @@ header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1) {
 }
 
 @media (max-width: 1439px) {
-  .container-fluid section div.row > div.flex{
-    padding-bottom:40px!important;
-  }
+  
   .container-fluid section div.row > div.flex {
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0px 44px;
@@ -350,9 +340,7 @@ header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1) {
 }
 
 @media (max-width: 1023px) {
-  .container-fluid section div.row > div.flex{
-    padding-bottom:40px!important;
-  }
+  
   .custom-recipe-filter-link {
     border: none!important;
     width: auto;
@@ -397,9 +385,7 @@ header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1) {
     position: absolute;
     left:14px;
   }
-  .container-fluid section div.row > div.flex{
-    padding-bottom:40px!important;
-  }
+  
   .container-fluid section div.row > div.flex {
     grid-template-columns: 1fr;
     padding: 0px 11px;
