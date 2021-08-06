@@ -17,7 +17,16 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1){
   display: none;
 }
+.sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center>div{
+  margin-left: 5px;
+  border: 2px dashed #AAAAAA;
+  border-radius: 10px;
+}
 
+.sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center>img{
+  margin-left: 5px;
+  border-radius: 10px;
+}
 header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > section div:nth-of-type(2) img{
   margin-left: 5px;
   border-radius: 10px;
@@ -397,7 +406,18 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
     width: 45px!important;
     height:45px!important;
   }  
-  
+  .sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center>div{
+    border: 1px dashed #AAAAAA;
+    border-radius: 10px;
+    width: 45px!important;
+    height:45px!important;
+  }
+  .sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center>img{
+    border: 1px dashed #AAAAAA;
+    border-radius: 10px;
+    width: 45px!important;
+    height:45px!important;
+  }
   .container-fluid section div.row > div.flex { 
     grid-template-columns: 1fr;
     padding: 0px 11px;
@@ -412,6 +432,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
     padding-bottom: 0px;
   }
   .head-count-container {
+    width: 341px;
     display: flex!important;
     flex-direction: row;
     justify-content: space-between;
@@ -450,7 +471,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
     margin:0px!important;
   }
   .head-count-container{
-    width: 100%;
+    width: 339px;
     margin:0px!important;
   }
   .custom-basket-count{

@@ -100,6 +100,7 @@
             } else {
                 basketCounter.textContent = "You're all set!";
                 continueButton.classList.add('custom-continue-button');
+                console.log('working');
                 continueButton.click();
             }
         });
