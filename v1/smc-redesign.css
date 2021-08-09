@@ -96,6 +96,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   column-gap: 30px;
   padding: 0px 81px;
   min-width: 100% !important;
+  overflow: hidden!important;
 }
 
 .container-fluid > div:nth-of-type(2) {
@@ -416,7 +417,6 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
     height:45px!important;
   }
   .sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center>img{
-    border: 1px dashed #AAAAAA;
     border-radius: 10px;
     width: 45px!important;
     height:45px!important;

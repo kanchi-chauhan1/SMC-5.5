@@ -64,6 +64,14 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   font-weight: bold;
   border-radius: 20px;
 }
+.sticky-inner-wrapper > section > div button:focus{
+  background-color: #d4d4d4!important;
+  color: white!important;
+}
+.sticky-inner-wrapper > section > div button:hover{
+  background-color: #d4d4d4!important;
+  color: white!important;
+}
 
 .sticky-inner-wrapper > section > div:nth-of-type(2) > p {
   display: none;
@@ -101,6 +109,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   column-gap: 30px;
   padding: 0px 81px;
   min-width: 100% !important;
+  overflow: hidden!important ;
 }
 
 .container-fluid > div:nth-of-type(2) {
@@ -198,6 +207,14 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 }
 
 .custom-continue-button{
+  background-color: #63a431!important;
+}
+
+.custom-continue-button:hover{
+  background-color: #63a431!important;
+}
+
+.custom-continue-button:focus{
   background-color: #63a431!important;
 }
 
@@ -413,7 +430,6 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
     height:45px!important;
   }
   .sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center>img{
-    border: 1px dashed #AAAAAA;
     border-radius: 10px;
     width: 45px!important;
     height:45px!important;

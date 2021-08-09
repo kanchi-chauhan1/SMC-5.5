@@ -87,7 +87,6 @@
         };
         var basketObserver = new MutationObserver(function () {
             var basketCounter = document.querySelector('.custom-basket-count');
-            var continueButton=document.querySelector('.sticky-inner-wrapper > section > div button');
             var recipeCount = document.querySelectorAll('.sticky-inner-wrapper > section > div > img').length;
             if (recipeCount === 0) {
                 basketCounter.textContent = "Choose 4 recipes";
@@ -99,45 +98,40 @@
                 basketCounter.textContent = "Add 1 more recipe";
             } else {
                 basketCounter.textContent = "You're all set!";
-                continueButton.classList.add('custom-continue-button');
-                console.log('working');
-                continueButton.click();
+                continueButton.classList.add("custom-continue-button");
+
             }
         });
         basketObserver.observe(targetNode, configObject);
     }
 
     function filterLinkFunctionality() {
-        var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
-            document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
-            document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 
-            document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)').click();         
-        });
-    }
-    function filterLinkChanges() {
         if (document.querySelector('.custom-recipe-filter-link-container')) {
             document.querySelector('.custom-recipe-filter-link-container').remove();
         }
+        var filterLinkHTML = '<div class="custom-recipe-filter-link-container"><button class="custom-recipe-filter-link">Got allergies or dietary requirements?</button></div>';
+        document.querySelector('.sticky-outer-wrapper').insertAdjacentHTML('afterend', filterLinkHTML);
+        document.querySelector('.custom-recipe-filter-link').addEventListener('click', function () { 
+            document.querySelector('.sticky-outer-wrapper + div:not(.custom-recipe-filter-link-container) > button:nth-of-type(1), .custom-recipe-filter-link-container + div > button:nth-of-type(1)').click();
+        });
+    }
+    function filterLinkChanges() {
         if (document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)')) {
             filterLinkFunctionality();
         } else {
             waitUntil( function () {
                 return document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)');
             }, function () {
-                console.log('working');
-                if (document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)')) {
-                    console.log('inside if');
-                    filterLinkFunctionality();
-                }
+                filterLinkFunctionality();
             });
         }
     }
     
-    function filterToggleList(ul) {
+   function filterToggleList(ul) {
         if (document.querySelector('.MuiPaper-root').innerHTML.toLowerCase().indexOf('>spiciness<') > -1) {
             ul.querySelectorAll('li').forEach(function (li) {
                 var text = li.innerText.toLowerCase().trim();
-                if (text.indexOf('spiciness') < 0  && text.indexOf('dietary requirements')  < 0 && text.indexOf('allergens') < 0) {
+                if (text.indexOf('spiciness') < 0  && text.indexOf('dietary requirements') < 0 && text.indexOf('allergens') < 0) {
                     li.classList.add('custom-filter-li-hide');
                 } else {
                     li.classList.remove('custom-filter-li-hide');
@@ -206,9 +200,19 @@
     }
 
     function addCartHeading() {
-        var targetnode=document.querySelector('.MuiPaper-root>div>span');
-        targetnode.innerText="Your trial box";
-        document.querySelector('.MuiDrawer-root div:nth-of-type(3) div:nth-of-type(2) div:nth-of-type(5) div:nth-of-type(1) p:nth-of-type(1)').innerText="Trial box";
+        if (document.querySelector('.MuiPaper-root>div>span') && document.querySelector('.MuiPaper-root>div>span').innerText === "Your first box") {
+            var targetnode=document.querySelector('.MuiPaper-root>div>span');
+            targetnode.innerText="Your trial box";
+            document.querySelector('.MuiDrawer-root div:nth-of-type(3) div:nth-of-type(2) div:nth-of-type(5) div:nth-of-type(1) p:nth-of-type(1)').innerText="Trial box";
+        } 
+        else {
+            var waitForModal=setInterval(function () {
+                if(document.querySelector('.MuiDrawer-root .MuiDrawer-modal')){
+                    clearInterval(waitForModal);
+                    document.querySelector('.MuiDrawer-root div:nth-of-type(3) div:nth-of-type(2) div:nth-of-type(5) div:nth-of-type(1) p:nth-of-type(1)').innerText="Trial box";
+                }
+            },50);
+        }
     }
     
     function init() {
