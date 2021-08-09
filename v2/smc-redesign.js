@@ -87,6 +87,7 @@
         };
         var basketObserver = new MutationObserver(function () {
             var basketCounter = document.querySelector('.custom-basket-count');
+            var continueButton = document.querySelector('.sticky-inner-wrapper > section > div button');
             var recipeCount = document.querySelectorAll('.sticky-inner-wrapper > section > div > img').length;
             if (recipeCount === 0) {
                 basketCounter.textContent = "Choose 4 recipes";
@@ -116,11 +117,11 @@
         });
     }
     function filterLinkChanges() {
-        if (document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)')) {
+        if (document.querySelector('.sticky-outer-wrapper + div:not(.custom-recipe-filter-link-container) > button:nth-of-type(1), .custom-recipe-filter-link-container + div > button:nth-of-type(1)')) {
             filterLinkFunctionality();
         } else {
             waitUntil( function () {
-                return document.querySelector('header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1)');
+                return document.querySelector('.sticky-outer-wrapper + div:not(.custom-recipe-filter-link-container) > button:nth-of-type(1), .custom-recipe-filter-link-container + div > button:nth-of-type(1)');
             }, function () {
                 filterLinkFunctionality();
             });

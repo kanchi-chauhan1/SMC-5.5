@@ -27,7 +27,9 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
   margin-left: 5px;
   border-radius: 10px;
 }
-
+.sticky-outer-wrapper + div:not(.custom-recipe-filter-link-container) > button:nth-of-type(1), .custom-recipe-filter-link-container + div > button:nth-of-type(1){
+  display: none!important;
+}
 header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > section div:nth-of-type(2) img{
   margin-left: 5px;
   border-radius: 10px;
@@ -64,6 +66,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 .sticky-inner-wrapper section {
   display: flex !important;
   justify-content: center;
+  z-index:11!important;
 }
 
 .sticky-inner-wrapper > section > div button {

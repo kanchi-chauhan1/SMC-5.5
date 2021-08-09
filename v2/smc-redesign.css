@@ -1,7 +1,6 @@
 header{
   display: none!important;
 }
-
 header + .container-fluid > div:nth-of-type(3){
   margin:0px;
 }
@@ -22,7 +21,9 @@ header + .container-fluid div:nth-of-type(3) > button:nth-of-type(1){
   border: 2px dashed #AAAAAA;
   border-radius: 10px;
 }
-
+.sticky-outer-wrapper + div:not(.custom-recipe-filter-link-container) > button:nth-of-type(1), .custom-recipe-filter-link-container + div > button:nth-of-type(1){
+  display: none!important;
+}
 .sticky-outer-wrapper>.sticky-inner-wrapper>section>div.flex-align-center>img{
   margin-left: 5px;
   border-radius: 10px;
@@ -87,6 +88,7 @@ header + .container-fluid > .sticky-outer-wrapper > .sticky-inner-wrapper > sect
 .sticky-inner-wrapper section {
   display: flex !important;
   justify-content: center;
+  z-index:11!important;
 }
 
 .sticky-inner-wrapper > section > div button > svg {
